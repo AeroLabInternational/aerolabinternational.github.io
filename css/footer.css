@@ -25,7 +25,9 @@ footer .footer-company { flex-shrink: 0; }
 footer .footer-company h1 { font-size: 1.5rem; margin-bottom: 1.625rem; }
 footer .footer-company h1 img { height: 4.75rem; width: auto; }
 footer .footer-company p { font-weight: normal; }
-footer .footer-company .footer-addr { white-space: pre-line; }
+@media screen and (max-width: 767px) {
+    footer .footer-company .footer-addr { white-space: pre-line; }
+}
 footer .footer-menu { flex: 1; }
 footer .footer-menu ul { display: flex; gap: 2.25rem; flex-wrap: nowrap; justify-content: flex-end; }
 footer .footer-menu li { white-space: nowrap; }
