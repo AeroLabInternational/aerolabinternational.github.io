@@ -321,9 +321,9 @@
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.08);
     box-shadow:
-        6px 6px 0 0 rgba(0, 0, 0, 0.25),
-        12px 12px 0 0 rgba(0, 0, 0, 0.18),
-        18px 18px 0 0 rgba(0, 0, 0, 0.10);
+        0.333rem 0.333rem 0 0 rgba(0, 0, 0, 0.25),
+        0.667rem 0.667rem 0 0 rgba(0, 0, 0, 0.18),
+        1rem     1rem     0 0 rgba(0, 0, 0, 0.10);
 }
 [data-theme="dark"] .aircraft-card-image {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
@@ -583,9 +583,9 @@
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.08);
     box-shadow:
-        6px 6px 0 0 rgba(0, 0, 0, 0.18),
-        12px 12px 0 0 rgba(0, 0, 0, 0.12),
-        18px 18px 0 0 rgba(0, 0, 0, 0.06);
+        0.333rem 0.333rem 0 0 rgba(0, 0, 0, 0.18),
+        0.667rem 0.667rem 0 0 rgba(0, 0, 0, 0.12),
+        1rem     1rem     0 0 rgba(0, 0, 0, 0.06);
 }
 [data-theme="dark"] .search-input {
     background: rgba(255, 255, 255, 0.08) !important;

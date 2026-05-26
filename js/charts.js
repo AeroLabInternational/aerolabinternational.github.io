@@ -144,7 +144,7 @@ function _runwayLabels(lang) {
     if (typeof window !== 'undefined' && window.innerWidth <= 767) {
         var mobile = {
             ja: ['最短離陸距離', ['最短着陸距離', '（PART 91）'], ['最短着陸距離', '（PART 135）']],
-            en: ['Minimum Takeoff Distance', ['Minimum Landing Distance', '(PART 91)'], ['Minimum Landing Distance', '(PART 135)']]
+            en: [['Minimum Takeoff', 'Distance'], ['Minimum Landing', 'Distance (PART 91)'], ['Minimum Landing', 'Distance (PART 135)']]
         };
         return mobile[l];
     }
@@ -623,7 +623,7 @@ function initRangeMap(defaultLat, defaultLng, ferryRangeNM, passengerRangeNM, ai
         if (!_map) {
             _map = L.map('rangeMap', { worldCopyJump: true });
             _applyTiles();
-            var _initZoom = (typeof window !== 'undefined' && window.innerWidth <= 767) ? 3 : 2;
+            var _initZoom = (typeof window !== 'undefined' && window.innerWidth > 1250) ? 2 : 1;
             _map.setView([0, lng], _initZoom, { animate: false });
         }
         drawRings(lat, lng);

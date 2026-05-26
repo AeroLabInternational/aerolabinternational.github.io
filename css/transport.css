@@ -18,7 +18,7 @@
 }
 .transport-card {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2.5rem;
   overflow: hidden;
 }
@@ -30,7 +30,7 @@
 }
 .transport-card-img {
   width: 100%;
-  height: 18rem;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
@@ -42,13 +42,6 @@
 
 
 
-@media screen and (max-width: 1280px) {
-  .transport-inner { padding: 4rem 1.5rem; }
-  .transport-card-img { height: 16rem; }
-}
-@media screen and (max-width: 1024px) {
-  .transport-inner { padding: 3.5rem 1.25rem; }
-}
 @media screen and (max-width: 767px) {
   .transport-inner { padding: 2.5rem 1.25rem; }
   .transport-wrapper { gap: 1.5rem; }
@@ -56,7 +49,7 @@
   .transport-card:nth-child(even) { flex-direction: column !important; }
   .transport-card-imgBox { width: 100%; order: 2; }
   .transport-card-textBox { order: 1; padding: 1.25rem 1.25rem 1rem; }
-  .transport-card-img { height: 14rem; }
+  .transport-card-img { height: auto; }
   .transport-card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
   .transport-card-text { font-size: 1rem; line-height: 1.9; }
 }
@@ -94,12 +87,6 @@
   margin-bottom: -30px;
 }
 
-@media screen and (max-width: 1280px) {
-  .flight-map-inner { padding: 0 1.25rem 4rem; }
-}
-@media screen and (max-width: 1024px) {
-  .flight-map-inner { padding: 0 1.25rem 3.5rem; }
-}
 @media screen and (max-width: 767px) {
   .flight-map-inner { padding: 0 1.25rem 2.5rem; }
 }

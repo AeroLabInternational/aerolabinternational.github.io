@@ -33,19 +33,19 @@
 
     /* ── Shadows ── */
     --shadow:
-        6px 6px 0 0 rgba(0, 0, 0, 0.20),
-        12px 12px 0 0 rgba(0, 0, 0, 0.11),
-        18px 18px 0 0 rgba(0, 0, 0, 0.05);
+        0.333rem 0.333rem 0 0 rgba(0, 0, 0, 0.20),
+        0.667rem 0.667rem 0 0 rgba(0, 0, 0, 0.11),
+        1rem     1rem     0 0 rgba(0, 0, 0, 0.05);
     --shadow-lg:
-        11px 11px 0 0 rgba(0, 0, 0, 0.20),
-        17px 17px 0 0 rgba(0, 0, 0, 0.11),
-        23px 23px 0 0 rgba(0, 0, 0, 0.05);
+        0.611rem 0.611rem 0 0 rgba(0, 0, 0, 0.20),
+        0.944rem 0.944rem 0 0 rgba(0, 0, 0, 0.11),
+        1.278rem 1.278rem 0 0 rgba(0, 0, 0, 0.05);
 
     /* ── Radius ── */
-    --radius:    4px;
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --radius:    0.222rem;
+    --radius-sm: 0.222rem;
+    --radius-md: 0.444rem;
+    --radius-lg: 0.667rem;
 
     /* ── Typography ── */
     --font-primary: "Noto Sans JP", sans-serif;
@@ -189,13 +189,13 @@ input, select {
 
 /* ── Typography ──
    Base font, size, line-height, and responsive scaling.
-   Font size uses viewport units and clamps to fixed px values
-   at breakpoints to maintain readability across all screen sizes.
+   Root font-size scales fluidly via clamp(): 14px floor → 18px at 1500px.
+   All rem values auto-scale proportionally. Only ≤767px uses a fixed override.
 */
 
 html {
     font-family: "Noto Sans JP", sans-serif;
-    font-size: 1.28vw;
+    font-size: clamp(14px, 1.2vw, 18px);
     line-height: 1.8;
     color: var(--text-dark);
     font-weight: 300;
@@ -207,47 +207,15 @@ html.fixed {
     position: fixed;
 }
 
-/* Large desktop — cap font size */
-
-@media (min-width: 1500px) {
-    html {
-        font-size: 18px;
-    }
-}
-
-/* 13-inch / medium-large desktop */
-
-@media (max-width: 1280px) {
-    html {
-        font-size: 1.4vw;
-    }
-}
-
-/* Tablet / iPad */
-
-@media (max-width: 1024px) {
-    html {
-        font-size: 1.6vw;
-    }
-}
-
-/* Mobile portrait */
+/* Mobile — fixed 16px root so mobile rem values are predictable */
 
 @media (max-width: 767px) {
     html {
-        font-size: 3.8vw;
+        font-size: 16px;
         color: var(--text-dark);
     }
     body {
         color: var(--text-dark);
-    }
-}
-
-/* Mobile landscape */
-
-@media (orientation: landscape) and (max-width: 767px) {
-    html {
-        font-size: 2.4vw;
     }
 }
 

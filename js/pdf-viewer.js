@@ -36,7 +36,7 @@ function initPdfViewer(options) {
       var dpr           = window.devicePixelRatio || 1;
       var padding       = parseFloat(getComputedStyle(canvas.parentElement).paddingLeft) * 2;
       var availableWidth = canvas.parentElement.clientWidth - padding;
-      var maxHeight     = window.innerHeight * 0.8;
+      var maxHeight     = window.innerHeight * 0.95;
       var viewport      = page.getViewport({ scale: 1 });
       var scaleByWidth  = (availableWidth * scaleMultiplier) / viewport.width;
       var scaleByHeight = maxHeight / viewport.height;

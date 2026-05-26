@@ -23,8 +23,8 @@
 .detail-runway-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.444rem;
+    box-shadow: 0 0.222rem 0.667rem rgba(0, 0, 0, 0.15);
     display: block;
     margin: 2rem auto 2rem;
 }
@@ -49,7 +49,7 @@
     padding: 1.5rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
 }
 
 /* ── Shared form controls ── */
@@ -71,11 +71,11 @@
     padding: 0 1rem;
     min-height: 40px;
     border: 1px solid rgba(26, 95, 160, 0.3);
-    border-radius: 6px;
+    border-radius: 0.333rem;
     background: rgba(255, 255, 255, 0.6);
     color: var(--text-dark);
     font-size: 0.95rem;
-    width: 180px;
+    width: 10rem;
     transition: all 0.2s;
     -webkit-appearance: none;
     appearance: none;
@@ -99,7 +99,7 @@
     padding: 0 1rem;
     min-height: 40px;
     border: 1px solid rgba(26, 95, 160, 0.3);
-    border-radius: 6px;
+    border-radius: 0.333rem;
     background: rgba(255, 255, 255, 0.6);
     color: var(--text-dark);
     font-size: 0.95rem;
@@ -117,7 +117,7 @@
     padding: 0 1rem;
     min-height: 40px;
     border: 1px solid rgba(26, 95, 160, 0.3);
-    border-radius: 6px;
+    border-radius: 0.333rem;
     background: rgba(255, 255, 255, 0.6);
     color: var(--text-dark);
     font-size: 0.95rem;
@@ -138,7 +138,7 @@
     min-height: 40px;
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(26, 95, 160, 0.3);
-    border-radius: 6px;
+    border-radius: 0.333rem;
     color: var(--text-dark);
     font-size: 0.95rem;
     font-weight: 600;
@@ -173,7 +173,7 @@
     display: flex;
 }
 .disclaimer-card {
-    border-radius: 12px;
+    border-radius: 0.667rem;
     padding: 1.5rem 2rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
@@ -183,7 +183,7 @@
 .spec-chart-panel .disclaimer-card {
     border: none;
     box-shadow: none;
-    border-radius: 8px;
+    border-radius: 0.444rem;
     background: var(--light-bg);
 }
 
@@ -206,7 +206,7 @@
 
 .cost-charts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22.222rem, 1fr));
     gap: 3rem;
     margin-bottom: 3rem;
 }
@@ -220,12 +220,12 @@
 
 .spec-chart-canvas {
     position: relative;
-    height: 400px;
+    height: 22.222rem;
 }
 
 .spec-chart-canvas--wide {
     position: relative;
-    height: 400px;
+    height: 22.222rem;
     width: 100%;
 }
 
@@ -289,10 +289,13 @@
     background: white;
     border: 2px solid var(--border-color);
     border-top: none;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.444rem;
+    overflow: hidden;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
     z-index: 1000;
-    margin-top: -8px;
+    margin-top: -0.444rem;
 }
 
 /* ── Range map legend ── */
@@ -336,16 +339,15 @@
 
 /* ── Range map container ── */
 #rangeMap {
-    height: 600px;
-    border-radius: 8px;
+    height: 33.333rem;
+    border-radius: 0.444rem;
     overflow: hidden;
 }
-@media (max-width: 1024px) { #rangeMap { height: 450px; } }
-@media (max-width: 767px)  { #rangeMap { height: 320px; } }
+@media (max-width: 767px)  { #rangeMap { height: 20rem; } }
 
 /* ── Cost config combined card ── */
 .cost-config-card {
-    border-radius: 12px;
+    border-radius: 0.667rem;
     padding: 1.5rem 2rem;
     margin-bottom: 2rem;
 }
@@ -413,33 +415,19 @@
 
 /* ── Responsive ── */
 
-/* 13-inch (≤ 1280px) */
-@media (max-width: 1280px) {
-    .detail-section-inner { padding: 3.5rem 1.5rem; }
-    .detail-section-title { font-size: 3rem; }
-    .cost-config-grid { grid-template-columns: repeat(3, minmax(180px, 1fr)); }
-}
-
-/* iPad (≤ 1024px) */
-@media (max-width: 1024px) {
-    .detail-section-title { font-size: 2.75rem; }
-    .detail-section-inner { padding: 3rem 1.25rem; }
-    .cost-charts-grid { grid-template-columns: 1fr; }
-}
-
 /* ── Design section image gallery rows ── */
 .design-image-row {
     display: flex;
     gap: 1.5rem;
     margin-top: 2rem;
     align-items: stretch;
-    min-height: 380px;
+    min-height: 23.75rem;
 }
 
 .design-interior-photo {
     flex: 0 0 calc(33.333% - 0.5rem);
-    min-height: 380px;
-    border-radius: 8px;
+    min-height: 23.75rem;
+    border-radius: 0.444rem;
     overflow: hidden;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
@@ -465,10 +453,10 @@
 .design-layout-panel {
     flex: 1;
     position: relative;
-    min-height: 380px;
+    min-height: 23.75rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 0.444rem;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -484,7 +472,7 @@
     display: flex;
     gap: 1.5rem;
     align-items: stretch;
-    min-height: 340px;
+    min-height: 21.25rem;
 }
 
 .design-exterior-specs {
@@ -495,10 +483,10 @@
 .design-image-cycler {
     flex: 1;
     position: relative;
-    min-height: 340px;
+    min-height: 21.25rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 0.444rem;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -534,8 +522,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
+    width: 2.111rem;
+    height: 2.111rem;
     border-radius: 50%;
     border: 2px solid rgba(0, 0, 0, 0.15);
     background: rgba(255, 255, 255, 0.85);
@@ -579,7 +567,6 @@
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
 }
-
 .design-cycler-dot--active {
     background: var(--accent-color);
     transform: scale(1.3);
@@ -602,10 +589,20 @@
     .disclaimer-content p { font-size: 1rem; line-height: 1.9; }
     .spec-note { font-size: 0.95rem; }
     .spec-label { font-size: 1rem; }
+
+    /* aircraftspecs.css rules that apply on detail pages — extend to 900px */
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .summary-grid .summary-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .summary-card .value { font-size: 1.5rem; }
+    .info-grid { grid-template-columns: 1fr; }
+    .info-item { flex-direction: column; gap: 0.25rem; }
+    .info-item-value { text-align: left; }
+    .cost-section { grid-template-columns: 1fr; }
+    .range-legend-row { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
 }
 
 /* Tablet portrait — design gallery stacks */
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
     .design-image-row,
     .design-exterior-row {
         flex-direction: column;
@@ -614,12 +611,12 @@
 
     .design-interior-photo {
         flex: 0 0 auto;
-        height: 240px;
+        height: 15rem;
     }
 
     .design-layout-panel,
     .design-image-cycler {
-        min-height: 280px;
+        min-height: 17.5rem;
     }
 
     .design-exterior-specs {

@@ -11,15 +11,6 @@
   color: var(--text-dark);
   padding: 7rem 1.5rem;
 }
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .magazine-inner { padding: 6rem 1.5rem; }
-}
-/* iPad (≤ 1024px) */
-@media screen and (max-width: 1024px) {
-  .magazine-inner { padding: 5rem 1.25rem; }
-  .magazine-pdf { padding: 1rem; }
-}
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .magazine-inner { padding: 5rem 1.25rem 4.375rem; }
@@ -64,7 +55,7 @@
   color: #fff !important;
   font-size: 0.875rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 0.222rem;
   text-decoration: none !important;
   cursor: pointer;
 }
@@ -79,10 +70,10 @@
 .magazine-pdf-canvas {
   display: block;
   width: auto;
-  height: auto;
+  height: 85vh;
   max-width: 100%;
   margin: 0 auto;
-  border-radius: 4px;
+  border-radius: 0.222rem;
 }
 .magazine-pdf-controls {
   display: flex;
@@ -95,7 +86,7 @@
   background: var(--primary-color);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.222rem;
   width: 2.75rem;
   height: 2.75rem;
   font-size: 1.5rem;
@@ -119,9 +110,6 @@
   color: var(--text-dark);
   min-width: 5rem;
   text-align: center;
-}
-@media screen and (max-width: 1024px) {
-  .magazine-pdf { padding: 1rem; }
 }
 @media screen and (max-width: 767px) {
   .magazine-pdf { padding: 0.75rem; }
@@ -177,14 +165,6 @@
 
 
 
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .dealer-inner { padding: 2rem 1.5rem; }
-}
-/* iPad (≤ 1024px) */
-@media screen and (max-width: 1024px) {
-  .dealer-inner { padding: 1.5rem 1.25rem; }
-}
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .dealer-inner { padding: 1.5rem 1rem; }
@@ -239,7 +219,8 @@
   grid-row: 1;
   align-self: stretch;
   overflow: hidden;
-  min-height: 18rem;
+  min-height: 20vw;
+  background: var(--light-bg);
 }
 .ys11-card-img {
   width: 100%;
@@ -257,14 +238,6 @@
 
 
 
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .ys11-inner { padding: 2rem 1.5rem; }
-}
-/* iPad (≤ 1024px) */
-@media screen and (max-width: 1024px) {
-  .ys11-inner { padding: 1.5rem 1.25rem; }
-}
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .ys11-inner { padding: 1.5rem 1rem; }
@@ -284,7 +257,7 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.444rem;
 }
 .ys11-movie-area iframe {
   position: absolute;

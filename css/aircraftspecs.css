@@ -31,10 +31,8 @@
     padding: 2rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
 }
-
-/* ── Search description text ── */
 .specs-search-desc {
     text-align: center;
     color: var(--text-dark);
@@ -58,7 +56,7 @@
     padding: 0 1rem;
     border: 1px solid rgba(26, 95, 160, 0.3) !important;
     border-right: none !important;
-    border-radius: 6px 0 0 6px;
+    border-radius: 0.333rem 0 0 0.333rem;
     background: rgba(255, 255, 255, 0.6) !important;
     color: var(--text-dark);
     font-size: 0.95rem;
@@ -86,7 +84,7 @@
     min-height: 40px;
     background: rgba(255, 255, 255, 0.6) !important;
     border: 1px solid rgba(26, 95, 160, 0.3) !important;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 0.333rem 0.333rem 0;
     color: var(--text-dark);
     font-size: 1rem;
     display: flex;
@@ -108,10 +106,10 @@
     left: 0;
     margin-top: 0.5rem;
     background: white;
-    border-radius: 8px;
+    border-radius: 0.444rem;
     box-shadow: var(--shadow-lg);
     min-width: 100%;
-    max-height: 400px;
+    max-height: 22.222rem;
     overflow-y: auto;
     z-index: 1000;
     opacity: 0;
@@ -176,12 +174,12 @@
 
 .aircraft-types-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
 }
 
 .aircraft-type-card {
-    border-radius: 12px;
+    border-radius: 0.667rem;
     padding: 2rem;
     text-align: center;
     color: var(--text-dark);
@@ -241,7 +239,7 @@ a.aircraft-type-card {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
 }
 
@@ -255,7 +253,7 @@ a.aircraft-type-card {
     padding: 2rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
 }
 
 .specs-about-card p {
@@ -278,7 +276,7 @@ a.aircraft-type-card {
     text-align: center;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -325,7 +323,7 @@ a.aircraft-type-card {
     padding: 1.5rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -381,7 +379,7 @@ a.aircraft-type-card {
     padding: 1.5rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -465,12 +463,12 @@ a.aircraft-type-card {
     padding: 1.5rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
+    border-radius: 0.667rem;
 }
 
 .spec-chart-panel {
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 0.667rem;
     background: var(--light-bg);
     border: 1px solid var(--border-color);
 }
@@ -478,24 +476,10 @@ a.aircraft-type-card {
 
 /* ── Responsive ── */
 
-/* 13-inch (≤ 1280px) */
-@media (max-width: 1280px) {
-    .specs-search-card { padding: 1.75rem; }
-    .aircraft-types-grid { gap: 1.5rem; }
-    .features-grid { gap: 1.5rem; }
-    .summary-grid { gap: 1.25rem; }
-    .cost-section { gap: 1.25rem; }
-}
-
-/* iPad (≤ 1024px) */
+/* Tablet (768px – 1024px) */
 @media (max-width: 1024px) {
-    .specs-section-title { font-size: 2.75rem; }
-    .aircraft-types-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    .features-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-    .cost-section { grid-template-columns: 1fr; }
-    .cost-charts-grid { grid-template-columns: 1fr; }
-    .cost-config-grid { grid-template-columns: repeat(2, 1fr); }
-    .specs-search-card { padding: 1.5rem; }
+    .aircraft-types-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Mobile (≤ 767px) */
@@ -508,6 +492,7 @@ a.aircraft-type-card {
     .aircraft-type-icon { width: 4rem; }
     .features-grid { grid-template-columns: 1fr; gap: 1rem; }
     .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .summary-grid .summary-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .summary-card .value { font-size: 1.5rem; }
     .info-grid { grid-template-columns: 1fr; }
     .info-item { flex-direction: column; gap: 0.25rem; }

@@ -12,7 +12,7 @@
 
 .home-animated-title {
   font-family: 'Dancing Script', cursive;
-  font-size: 82px;
+  font-size: 4.556rem;
   color: #fff;
   white-space: nowrap;
   display: block;
@@ -23,33 +23,21 @@
 @keyframes draw-hero-text {
   to { clip-path: inset(0 -0.2em 0 0); }
 }
-@media (max-width: 1280px) {
-  .home-animated-title { font-size: 68px; }
-}
-@media (max-width: 1024px) {
-  .home-animated-title { font-size: 54px; }
-}
 @media (max-width: 767px) {
-  .home-animated-title { font-size: 52px; }
+  .home-animated-title { font-size: 3.25rem; }
 }
 
  .home-animated-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 52px;
+  font-size: 2.889rem;
   color: #fff;
   white-space: nowrap;
   display: inline-block;
   padding: 0 0.15em 0.3em 0;
 }
-@media (max-width: 1280px) {
-  .home-animated-text { font-size: 44px; }
-}
-@media (max-width: 1024px) {
-  .home-animated-text { font-size: 40px; }
-}
 @media (max-width: 767px) {
   .home-animated-text {
-    font-size: 36px;
+    font-size: 2.25rem;
     white-space: normal;
   }
 }
@@ -72,8 +60,8 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  width: 78px;
-  height: 78px;
+  width: 4.333rem;
+  height: 4.333rem;
   background-image: url('/assets/general/Scroll.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -138,33 +126,25 @@
 }
 
 .home-main .home-subtitle {
-  font-size: 28px;
+  font-size: 1.556rem;
   color: #fff;
   margin-top: 0.75rem;
   text-align: center;
   padding: 0 1.5rem;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(0.667rem);
   animation: home-subtitle-fadein 2.0s ease-in-out forwards;
   animation-delay: 2.5s;
 }
-html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
+html[lang="en"] .home-main .home-subtitle { font-size: 1.111rem; }
 @keyframes home-subtitle-fadein {
-  0%   { opacity: 0; filter: blur(15px); transform: translateY(12px); }
-  50%  { opacity: 0; filter: blur(15px); transform: translateY(12px); }
+  0%   { opacity: 0; filter: blur(15px); transform: translateY(0.667rem); }
+  50%  { opacity: 0; filter: blur(15px); transform: translateY(0.667rem); }
   100% { opacity: 1; filter: blur(0);    transform: translateY(0); }
 }
-@media (max-width: 1280px) {
-  .home-main .home-subtitle { font-size: 24px; }
-  html[lang="en"] .home-main .home-subtitle { font-size: 18px; }
-}
-@media (max-width: 1024px) {
-  .home-main .home-subtitle { font-size: 20px; }
-  html[lang="en"] .home-main .home-subtitle { font-size: 16px; }
-}
 @media (max-width: 767px) {
-  .home-main .home-subtitle { font-size: 22px; }
-  html[lang="en"] .home-main .home-subtitle { font-size: 15px; }
+  .home-main .home-subtitle { font-size: 1.375rem; }
+  html[lang="en"] .home-main .home-subtitle { font-size: 0.9375rem; }
 }
 @media (max-width: 767px) {
   .home-top::after { bottom: 4rem; }
@@ -196,12 +176,6 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
   align-items: center;
   gap: 3rem;
 }
-@media (max-width: 1280px) {
-  .home-info-content { gap: 2.5rem; }
-}
-@media (max-width: 1024px) {
-  .home-info-content { gap: 2rem; }
-}
 @media (max-width: 767px) {
   .home-info-content { flex-direction: column; gap: 1.5rem; }
 }
@@ -220,7 +194,7 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 
 .home-info-text {
   flex: 1;
-  font-size: 16px;
+  font-size: 0.889rem;
   line-height: 2.0;
   letter-spacing: 0.04em;
   color: #fff;
@@ -257,9 +231,6 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 .home-linkbox-wrap:last-child {
   border-bottom: none;
 }
-@media (max-width: 1024px) {
-  .home-linkbox-wrap { padding: 2rem 0; }
-}
 @media (max-width: 767px) {
   .home-linkbox-wrap { flex-direction: column; padding: 2rem 0; gap: 1.5rem; }
 }
@@ -277,7 +248,7 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 }
 
 .home-linkbox-left p {
-  font-size: 16px;
+  font-size: 0.889rem;
   line-height: 2.0;
   letter-spacing: 0.04em;
 }
@@ -300,33 +271,27 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 
 .home-linkbox-right li {
   margin: 0;
-  padding: 20px 0;
+  padding: 1.111rem 0;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 20px;
+  font-size: 1.111rem;
   border-bottom: 1px solid #fff;
   background: url(/assets/top_sec03_arrow.svg) no-repeat right center;
   border-left: 3px solid transparent;
   transition: padding-left var(--transition), border-left-color var(--transition);
 }
 .home-linkbox-right li:hover {
-  padding-left: 18px;
+  padding-left: 1rem;
   border-left-color: #fff;
 }
-@media (max-width: 1280px) {
-  .home-linkbox-right li { font-size: 18px; }
-}
-@media (max-width: 1024px) {
-  .home-linkbox-right li { font-size: 1rem; padding: 18px 0; }
-}
 @media (max-width: 767px) {
-  .home-linkbox-right li { font-size: 1rem; padding: 16px 0; }
+  .home-linkbox-right li { font-size: 1rem; padding: 1rem 0; }
 }
 
 .home-linkbox-right li span {
-  padding-top: 4px;
+  padding-top: 0.222rem;
   display: block;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
+  font-size: 0.778rem;
 }
 @media (max-width: 767px) {
   .home-linkbox-right li span { font-size: 0.75rem; }
@@ -362,7 +327,7 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 }
 
 .home-group-subtitle {
-  font-size: 15px;
+  font-size: 0.833rem;
   color: #fff;
   letter-spacing: 0.04em;
   line-height: 1.8;
@@ -373,9 +338,6 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
   display: flex;
   justify-content: center;
   gap: 2rem;
-}
-@media (max-width: 1280px) {
-  .home-group-cards { gap: 1.5rem; }
 }
 @media (max-width: 767px) {
   .home-group-cards { flex-direction: column; align-items: center; }
@@ -389,7 +351,7 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
   max-width: 420px;
   min-width: 0;
   aspect-ratio: 487 / 150;
-  border-radius: 12px;
+  border-radius: 0.667rem;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -398,7 +360,7 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 }
 .home-group-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.667rem 1.778rem rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 767px) {
   .home-group-card { flex: none; width: 100%; max-width: 420px;}
@@ -432,19 +394,16 @@ html[lang="en"] .home-main .home-subtitle { font-size: 20px; }
 }
 .home-group-card--korea .home-group-card-logo {
   width: auto !important;
-  height: 70px !important;
+  height: 3.889rem !important;
   max-width: 60% !important;
   object-fit: contain !important;
 }
 .home-group-card--aircraftspecs .home-group-card-logo {
   width: auto !important;
-  height: 140px !important;
+  height: 7.778rem !important;
   max-width: 80% !important;
   object-fit: contain !important;
 }
-@media (max-width: 1280px) {
-  .home-group-card--aircraftspecs .home-group-card-logo { height: 120px !important; }
-}
 @media (max-width: 767px) {
-  .home-group-card--aircraftspecs .home-group-card-logo { height: 100px !important; }
+  .home-group-card--aircraftspecs .home-group-card-logo { height: 6.25rem !important; }
 }

@@ -52,7 +52,7 @@
 
 .ir-content-card {
   margin-top: 0;
-  border-radius: 12px;
+  border-radius: 0.667rem;
   padding: 2rem;
 }
 
@@ -62,7 +62,7 @@
 
 .xj-section {
   margin-bottom: 2rem;
-  border-radius: 12px;
+  border-radius: 0.667rem;
   padding: 2rem;
 }
 .xj-section:last-of-type { margin-bottom: 0; }
@@ -82,7 +82,7 @@
   font-weight: 600;
   color: var(--text-dark);
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232d2f4e' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
-  border-radius: 4px;
+  border-radius: 0.222rem;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -113,7 +113,7 @@
   background: #fff;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 0.222rem;
   border: 2px solid currentColor;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -180,7 +180,7 @@
   padding: 0.2rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 0.222rem;
   border: 2px solid currentColor;
   white-space: nowrap;
 }
@@ -197,7 +197,7 @@
   align-items: center;
   gap: 1.25rem;
   background: var(--light-bg);
-  border-radius: 8px;
+  border-radius: 0.444rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -229,7 +229,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.444rem;
 }
 .movie-area video {
   position: absolute;
@@ -238,24 +238,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
+  border-radius: 0.444rem;
 }
 
 /* Pointer cursor for PDF and email links */
 a[href^="mailto"] { cursor: pointer; }
-
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .ir-section-inner { padding: 4rem 1.5rem; }
-  .xj-section { padding: 1.75rem; }
-}
-
-/* iPad (≤ 1024px) */
-@media screen and (max-width: 1024px) {
-  .ir-section-inner { padding: 3.5rem 1.25rem; }
-  .xj-section { padding: 1.5rem; }
-  .ir-contact { gap: 1.5rem; }
-}
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {

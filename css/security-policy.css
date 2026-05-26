@@ -39,7 +39,7 @@
 
 /* Content card */
 .policy-content-card {
-  border-radius: 12px;
+  border-radius: 0.667rem;
   padding: 2rem;
 }
 
@@ -75,18 +75,6 @@
 }
 
 
-
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .policy-section-inner { padding: 4rem 2.5rem; }
-  .policy-content-card { padding: 1.75rem; }
-}
-
-/* iPad (≤ 1024px) */
-@media screen and (max-width: 1024px) {
-  .policy-section-inner { padding: 3.5rem 1.25rem; }
-  .policy-content-card { padding: 1.5rem; }
-}
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {

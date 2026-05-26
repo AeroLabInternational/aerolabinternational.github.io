@@ -24,8 +24,8 @@
   position: absolute;
   bottom: 2rem;
   right: 2rem;
-  width: 78px;
-  height: 78px;
+  width: 4.333rem;
+  height: 4.333rem;
   background-image: url('/assets/general/Scroll.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@
 
 .general-title-box .general-title-english {
   font-family: 'Dancing Script', cursive;
-  font-size: 77px;
+  font-size: clamp(2.75rem, 5.5vw, 4.278rem);
   color: #fff !important;
   font-weight: 700;
   white-space: nowrap;
@@ -84,45 +84,29 @@
 
 .general-title-box .general-title-title {
   color: #fff;
-  font-size: 28px;
+  font-size: 1.556rem;
   letter-spacing: 0.15rem;
   margin: 0;
   display: inline-block;
   align-self: start;
   padding-top: 2rem;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(0.667rem);
   animation: general-title-fadein 2s ease-in-out forwards;
   animation-delay: 2.5s;
 }
 @keyframes general-title-fadein {
-  0%   { opacity: 0; filter: blur(15px); transform: translateY(12px); }
-  50%  { opacity: 0; filter: blur(15px); transform: translateY(12px); }
+  0%   { opacity: 0; filter: blur(15px); transform: translateY(0.667rem); }
+  50%  { opacity: 0; filter: blur(15px); transform: translateY(0.667rem); }
   100% { opacity: 1; filter: blur(0);    transform: translateY(0); }
-}
-
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .general-title { height: 100vh; }
-  .general-title-box .general-title-english { font-size: 62px; padding-bottom: 1.75rem; }
-  .general-title-box .general-title-icon { width: 4rem; }
-  .general-title-box .general-title-title { font-size: 24px; padding-top: 1.75rem; }
-}
-
-/* iPad (768px – 1024px) */
-@media screen and (max-width: 1024px) {
-  .general-title { height: 75vh; }
-  .general-title-box .general-title-english { font-size: 50px !important; padding-bottom: 1.5rem; }
-  .general-title-box .general-title-icon { width: 2.5rem; }
-  .general-title-box .general-title-title { font-size: 20px; padding-top: 1.5rem; }
 }
 
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .general-title { height: 100svh; }
-  .general-title-box .general-title-english { font-size: 52px !important; padding-bottom: 1rem; white-space: normal; }
+  .general-title-box .general-title-english { font-size: 3.25rem !important; padding-bottom: 1rem; white-space: normal; }
   .general-title-box .general-title-icon { width: 2.5rem; }
-  .general-title-box .general-title-title { font-size: 22px; padding-top: 1rem; }
+  .general-title-box .general-title-title { font-size: 1.375rem; padding-top: 1rem; }
 }
 
 /* ================================================
@@ -148,16 +132,6 @@
   color: var(--text-dark);
 }
 
-/* 13-inch (≤ 1280px) */
-@media screen and (max-width: 1280px) {
-  .general-heading-inner { padding: 4rem 1.75rem; }
-}
-
-/* iPad (768px – 1024px) */
-@media screen and (max-width: 1024px) {
-  .general-heading-inner { padding: 3.5rem 1.75rem; }
-}
-
 /* Mobile (≤ 767px) */
 @media screen and (max-width: 767px) {
   .general-heading-inner { padding: 2rem 1.25rem; }
@@ -171,7 +145,7 @@
 .global-card {
   background: var(--light-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 0.444rem;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -187,18 +161,10 @@
 
 .global-title {
   text-align: center;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   letter-spacing: 0.1rem;
   margin-bottom: 2.5rem;
   color: var(--text-dark);
-}
-
-@media screen and (max-width: 1280px) {
-  .global-title { font-size: 3rem; margin-bottom: 2.25rem; }
-}
-
-@media screen and (max-width: 1024px) {
-  .global-title { font-size: 2.75rem; margin-bottom: 2rem; }
 }
 
 @media screen and (max-width: 767px) {
@@ -213,20 +179,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-@media screen and (max-width: 1280px) {
-  .global-inner { padding: 4rem 1.5rem; }
-}
-
-@media screen and (max-width: 1024px) {
-  .global-inner { padding: 3.5rem 1.25rem; }
-}
-
 @media screen and (max-width: 767px) {
   .global-inner { padding: 2.5rem 1.25rem; }
 }
 
 .global-card-title {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--text-dark);

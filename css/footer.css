@@ -46,19 +46,6 @@ footer .footer-copyright {
     color: #fff;
 }
 
-/* 13-inch (≤ 1280px) */
-@media (max-width: 1280px) {
-    footer .footer-wrap { padding: 0 3rem; }
-    footer .footer-copyright { padding: 0 3rem; }
-}
-
-/* iPad (≤ 1024px) */
-@media (max-width: 1024px) {
-    footer .footer-wrap { padding: 0 2.25rem; gap: 1.375rem; }
-    footer .footer-menu ul { flex-wrap: wrap; gap: 1.125rem; justify-content: flex-end; }
-    footer .footer-copyright { padding: 0 2.25rem; }
-}
-
 /* Mobile (≤ 767px) */
 @media (max-width: 767px) {
     footer .footer-wrap { flex-direction: column; align-items: center; padding: 0 1.375rem; gap: 1.375rem; }
