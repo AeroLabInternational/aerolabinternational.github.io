@@ -230,6 +230,7 @@
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--text-dark);
+  text-align: left;
 }
 
 .global-card-text {

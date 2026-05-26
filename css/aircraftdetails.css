@@ -179,6 +179,19 @@
     border: 1px solid var(--border-color);
 }
 
+/* Suppress card chrome when disclaimer is embedded inside another card */
+.spec-chart-panel .disclaimer-card {
+    border: none;
+    box-shadow: none;
+    border-radius: 8px;
+    background: var(--light-bg);
+}
+
+.spec-chart-panel .disclaimer-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .disclaimer-card h2 {
     margin-bottom: 1rem;
 }

@@ -137,11 +137,25 @@ var _xjChartLabels = {
     }
 };
 
+// Returns runway labels for the given language, splitting PART 91/135 onto a
+// second line on mobile so the bar area isn't squished by long y-axis text.
+function _runwayLabels(lang) {
+    var l = (lang === 'en') ? 'en' : 'ja';
+    if (typeof window !== 'undefined' && window.innerWidth <= 767) {
+        var mobile = {
+            ja: ['最短離陸距離', ['最短着陸距離', '（PART 91）'], ['最短着陸距離', '（PART 135）']],
+            en: ['Minimum Takeoff Distance', ['Minimum Landing Distance', '(PART 91)'], ['Minimum Landing Distance', '(PART 135)']]
+        };
+        return mobile[l];
+    }
+    return _xjChartLabels.runway[l].slice();
+}
+
 // Update cost chart labels to the current language (called by language.js hook below)
 function updateCostChartLanguage(lang) {
     var l = (lang === 'en') ? 'en' : 'ja';
     if (_xjCharts.runway) {
-        _xjCharts.runway.data.labels = _xjChartLabels.runway[l].slice();
+        _xjCharts.runway.data.labels = _runwayLabels(lang);
         _xjCharts.runway.options.scales.x.title.text = (l === 'en') ? 'Distance' : '距離';
         _xjCharts.runway.update('none');
     }
@@ -154,6 +168,28 @@ function updateCostChartLanguage(lang) {
         _xjCharts.fixedCost.update('none');
     }
 }
+
+// Refresh runway labels when crossing the mobile breakpoint on resize
+(function () {
+    var _prevMobile = typeof window !== 'undefined' && window.innerWidth <= 767;
+    var _resizeTimer = null;
+    if (typeof window !== 'undefined') {
+        window.addEventListener('resize', function () {
+            if (_resizeTimer) { clearTimeout(_resizeTimer); }
+            _resizeTimer = setTimeout(function () {
+                var nowMobile = window.innerWidth <= 767;
+                if (nowMobile !== _prevMobile) {
+                    _prevMobile = nowMobile;
+                    if (_xjCharts.runway) {
+                        var lang = document.documentElement.getAttribute('lang') || 'ja';
+                        _xjCharts.runway.data.labels = _runwayLabels(lang);
+                        _xjCharts.runway.update('none');
+                    }
+                }
+            }, 150);
+        });
+    }
+}());
 
 // Watch for lang attribute changes on <html> (set by language.js applyLanguage)
 if (typeof MutationObserver !== 'undefined') {
@@ -587,7 +623,8 @@ function initRangeMap(defaultLat, defaultLng, ferryRangeNM, passengerRangeNM, ai
         if (!_map) {
             _map = L.map('rangeMap', { worldCopyJump: true });
             _applyTiles();
-            _map.setView([0, lng], 2, { animate: false });
+            var _initZoom = (typeof window !== 'undefined' && window.innerWidth <= 767) ? 3 : 2;
+            _map.setView([0, lng], _initZoom, { animate: false });
         }
         drawRings(lat, lng);
         setTimeout(function() { if (_map) _map.invalidateSize(); }, 150);
@@ -629,7 +666,7 @@ function initRunwayChart(takeoff, landingPart91, landingPart135, unit = 'm') {
     const chart = new Chart(runwayCtx.getContext('2d'), {
         type: 'bar',
         data: {
-            labels: _xjChartLabels.runway.ja.slice(),
+            labels: _runwayLabels('ja'),
             datasets: [{
                 label: 'Distance',
                 data: initialData,
@@ -857,12 +894,11 @@ function initCostCharts(variableCosts, fixedCosts) {
                         displayColors: true,
                         callbacks: {
                             label: function(context) {
-                                const label = context.label || '';
                                 const value = context.parsed || 0;
                                 const total = context.dataset.data.reduce((a, b) => a + b, 0);
                                 const percentage = ((value / total) * 100).toFixed(1);
                                 const currencyConfig = getCurrencyConfig();
-                                return label + ': ' + currencyConfig.format(value) + ' (' + percentage + '%)';
+                                return currencyConfig.format(value) + ' (' + percentage + '%)';
                             }
                         }
                     }
@@ -935,12 +971,11 @@ function initCostCharts(variableCosts, fixedCosts) {
                         displayColors: true,
                         callbacks: {
                             label: function(context) {
-                                const label = context.label || '';
                                 const value = context.parsed || 0;
                                 const total = context.dataset.data.reduce((a, b) => a + b, 0);
                                 const percentage = ((value / total) * 100).toFixed(1);
                                 const currencyConfig = getCurrencyConfig();
-                                return label + ': ' + currencyConfig.format(value) + ' (' + percentage + '%)';
+                                return currencyConfig.format(value) + ' (' + percentage + '%)';
                             }
                         }
                     }

@@ -526,6 +526,11 @@
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.08);
 }
+
+[data-theme="dark"] .spec-chart-panel .disclaimer-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: transparent;
+}
 [data-theme="dark"] .spec-panel {
     background: rgba(255, 255, 255, 0.05) !important;
     border-color: rgba(255, 255, 255, 0.08) !important;

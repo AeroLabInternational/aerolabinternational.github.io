@@ -118,15 +118,15 @@
                     <h3>運航コストの内訳</h3>
                     <div class="cost-row">
                         <span class="cost-label">年間変動費合計</span>
-                        <span class="cost-value" id="annualVariableCost" data-usd="1755000"></span>
+                        <span class="cost-value" id="annualVariableCost" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">年間固定費合計</span>
-                        <span id="annualFixedCostDisplay" class="cost-value" data-usd="1000000"></span>
+                        <span id="annualFixedCostDisplay" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">年間総コスト(固定費＋変動費)</span>
-                        <span class="cost-value" id="totalAnnualBudget" data-usd="2540000"></span>
+                        <span class="cost-value" id="totalAnnualBudget" data-usd="0"></span>
                     </div>
                     <div class="cost-row sub-total">
                         <span class="cost-label">月間総コスト(固定費＋変動費)</span>
@@ -142,23 +142,23 @@
                     <h3>時間変動費</h3>
                     <div class="cost-row">
                         <span class="cost-label">燃料費</span>
-                        <span id="fuelCostValue" class="cost-value" data-usd="3263"></span>
+                        <span id="fuelCostValue" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">整備関連費用</span>
-                        <span id="costAirframe" class="cost-value" data-usd="1800"></span>
+                        <span id="costAirframe" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">エンジン・APU整備プログラム費</span>
-                        <span id="costEngine" class="cost-value" data-usd="1450"></span>
+                        <span id="costEngine" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">その他変動費</span>
-                        <span id="costMisc" class="cost-value" data-usd="600"></span>
+                        <span id="costMisc" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">時間変動費合計</span>
-                        <span id="hourlyVariableTotal" class="cost-value" data-usd="7113"></span>
+                        <span id="hourlyVariableTotal" class="cost-value" data-usd="0"></span>
                     </div>
                 </div>
 
@@ -166,31 +166,31 @@
                     <h3>年間固定費明細</h3>
                     <div class="cost-row">
                         <span class="cost-label">乗員人件費 (給与・福利厚生)</span>
-                        <span id="costCrew" class="cost-value" data-usd="500000"></span>
+                        <span id="costCrew" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">乗員訓練費</span>
-                        <span id="costTraining" class="cost-value" data-usd="100000"></span>
+                        <span id="costTraining" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">格納庫費</span>
-                        <span id="costHangar" class="cost-value" data-usd="150000"></span>
+                        <span id="costHangar" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">管理費</span>
-                        <span id="costMgmt" class="cost-value" data-usd="100000"></span>
+                        <span id="costMgmt" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">航空機保険料</span>
-                        <span id="costInsurance" class="cost-value" data-usd="100000"></span>
+                        <span id="costInsurance" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">その他固定費</span>
-                        <span id="costFixedMisc" class="cost-value" data-usd="50000"></span>
+                        <span id="costFixedMisc" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">年間固定費合計</span>
-                        <span id="annualFixedTotal" class="cost-value" data-usd="1000000"></span>
+                        <span id="annualFixedTotal" class="cost-value" data-usd="0"></span>
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@
                 <div class="info-card global-card">
                     <h3>航続距離と飛行高度</h3>
                     <div class="info-item">
-                        <span class="info-item-label">航続距離 (マッハ0.8、乗員・乗客12名の場合)</span>
+                        <span class="info-item-label">航続距離 (マッハ0.8、乗員4名・乗客8名の場合)</span>
                         <span class="info-item-value">6,750海里  / <span class="unit-metric">12,501 km</span><span class="unit-imperial">7,767 mi</span></span>
                     </div>
                     <div class="info-item">
@@ -563,10 +563,17 @@
     <script src="/js/language.js"></script>
     <script src="/js/aircraftspecs.js"></script>
     <script src="/js/airports.js"></script>
+    <script src="/js/aircraft-costs.js"></script>
     <script src="/js/charts.js"></script>
     <script src="/js/currency.js"></script>
     <script src="/js/fuelcost.js"></script>
     <script>
+        // ===========================
+        // AIRCRAFT ID — identifies which cost block to load from aircraft-costs.js
+        // ===========================
+        var AIRCRAFT_ID = 'G550';
+        var _aircraftData = applyAircraftCosts(AIRCRAFT_ID);
+
         let runwayChart;
         let costCharts;
         let syncCurrency;
@@ -655,7 +662,8 @@
             const canvas = document.getElementById('runwayChart');
             if (!canvas) { return runwayChart; }
             if (!runwayChart && typeof Chart !== 'undefined' && typeof initRunwayChart === 'function') {
-                runwayChart = initRunwayChart(5910, 2770, 4617, runwayUnit);
+                var rwy = (_aircraftData && _aircraftData.runway) ? _aircraftData.runway : { takeoff: 0, landingP91: 0, landingP135: 0 };
+                runwayChart = initRunwayChart(rwy.takeoff, rwy.landingP91, rwy.landingP135, runwayUnit);
             }
             return runwayChart;
         }
@@ -814,7 +822,8 @@
                 costCalculator: costCalculator,
                 costCharts: costCharts,
                 fuelRowId: 'fuelCostValue',
-                otherHourly: computeNonFuelHourly()
+                otherHourly: computeNonFuelHourly(),
+                fuelLitersPerHour: _aircraftData ? _aircraftData.fuelLitersPerHour : undefined
             });
         }
 
