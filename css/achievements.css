@@ -51,6 +51,11 @@
 .magazine-card-number-pozi { font-weight: 600; color: var(--text-dark); }
 
 
+.magazine-card-textBox > .link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
 .magazine-card-text .link {
   display: inline-block;
   margin-top: 0.25rem;

@@ -45,6 +45,14 @@ const aircraftDatabase = [
     { name: 'Learjet 75 Liberty',            type: 'Midsize Business Jet',        range: '2,040 NM', speed: '465 KTS', pax: '最大9名',  url: '#' },
 ];
 
+function formatPax(pax) {
+    var lang = localStorage.getItem('preferredLang');
+    if (lang === 'en') {
+        return pax.replace(/最大(\d+)名/g, 'Max $1 Passengers');
+    }
+    return pax;
+}
+
 function performSearch(query) {
     if (!query || query.trim() === '') {
         searchResults.classList.remove('active');
@@ -68,7 +76,7 @@ function performSearch(query) {
     searchResults.innerHTML = matches.map(aircraft => `
         <a href="${aircraft.url}" class="search-result-item">
             <div class="search-result-title">${aircraft.name}</div>
-            <div class="search-result-type">${aircraft.range} · ${aircraft.speed} · ${aircraft.pax}</div>
+            <div class="search-result-type">${aircraft.range} · ${aircraft.speed} · ${formatPax(aircraft.pax)}</div>
         </a>
     `).join('');
     searchResults.classList.add('active');

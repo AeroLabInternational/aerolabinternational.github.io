@@ -21,7 +21,8 @@ function initLangSwitcher() {
             .tab-btn, .section-title,
             label, span:not(.search-results span):not(.search-result-item span),
             .chart-title, td, th, dt, dd, .footer-menu a, li:not(.search-results li),
-            .value, option, button:not(.tab-btn)
+            .value, option, button:not(.tab-btn), a.location-link,
+            #xj-select-category a, #xj-select-category li
         `);
 
         elementsToTranslate.forEach(element => {
@@ -31,7 +32,8 @@ function initLangSwitcher() {
                 element.closest('.language-switcher') ||
                 element.closest('.nav-list-card') ||
                 element.closest('.home-linkbox-right') ||
-                element.closest('.general-title')) {
+                element.closest('.general-title') ||
+                element.classList.contains('linkbox-card-text')) {
                 return;
             }
 
@@ -41,7 +43,10 @@ function initLangSwitcher() {
                                    );
             if (hasOnlyChildren) return;
 
-            const originalText = element.getAttribute('data-original') || element.textContent.trim();
+            const isInput = element.tagName === 'INPUT' || element.tagName === 'TEXTAREA';
+            const originalText = element.getAttribute('data-original') ||
+                                 (isInput ? element.getAttribute('placeholder') : null) ||
+                                 element.textContent.trim();
 
             if (!originalText || originalText.length < 2) return;
 
@@ -67,7 +72,7 @@ function initLangSwitcher() {
                         ? translations.ja[originalText]
                         : originalText;
 
-            if (element.tagName === 'INPUT') {
+            if (isInput) {
                 element.placeholder = translation;
             } else {
                 element.textContent = translation;
@@ -76,16 +81,51 @@ function initLangSwitcher() {
 
         translateNavLinks(lang);
 
+        // ── XJ IR widget: category tabs ──────────────────────────────────────────
+        // The general loop skips <li> elements that have only child elements
+        // (hasOnlyChildren guard), so we handle them explicitly here.
+        // Always read from data-original (set by main loop or by us) so the
+        // Japanese key is preserved even when already in English mode.
+        document.querySelectorAll('#xj-select-category li').forEach(function(li) {
+            var textEl = (li.children.length === 1 && li.children[0].children.length === 0)
+                ? li.children[0]
+                : li;
+            // Seed data-original with the raw text ONLY if it hasn't been set yet.
+            // If it's already set, the cached value is the authoritative Japanese source.
+            var currentText = textEl.textContent.trim();
+            if (!textEl.getAttribute('data-original')) {
+                textEl.setAttribute('data-original', currentText);
+            }
+            var orig = textEl.getAttribute('data-original');
+            textEl.textContent = (lang === 'en' && translations.en[orig])
+                ? translations.en[orig]
+                : orig;
+        });
+
+        // ── XJ IR widget: year dropdown options ───────────────────────────────────
+        document.querySelectorAll('#xj-select-year_s option').forEach(function(opt) {
+            var currentText = opt.textContent.trim();
+            if (!opt.getAttribute('data-original')) {
+                opt.setAttribute('data-original', currentText);
+            }
+            var orig = opt.getAttribute('data-original');
+            opt.textContent = (lang === 'en' && translations.en[orig])
+                ? translations.en[orig]
+                : orig;
+        });
+
         // Replace 海里 / マッハ unit labels inside mixed-content elements
         // that were skipped by the key-based translation above.
         (function replaceUnits(node) {
             if (node.nodeType === Node.TEXT_NODE) {
                 var t = node.textContent;
-                if (lang === 'en' && (t.includes('マッハ') || t.includes('海里'))) {
-                    node.textContent = t.replace(/マッハ/g, 'Mach ').replace(/海里/g, '\u00a0NM');
-                } else if (lang === 'ja' && (t.includes('Mach ') || t.includes('\u00a0NM'))) {
-                    node.textContent = t.replace(/Mach /g, 'マッハ').replace(/\u00a0NM/g, '海里');
+                if (lang === 'en') {
+                    t = t.replace(/(最大)?(\d[\d\-\u2013]*)名/g, '$2');
+                    t = t.replace(/マッハ/g, 'Mach ').replace(/海里/g, '\u00a0NM');
+                } else if (lang === 'ja') {
+                    t = t.replace(/Mach /g, 'マッハ').replace(/\u00a0NM/g, '海里');
                 }
+                node.textContent = t;
             } else if (node.nodeType === Node.ELEMENT_NODE &&
                        node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
                 node.childNodes.forEach(function(c) { replaceUnits(c); });
@@ -167,6 +207,14 @@ function initLangSwitcher() {
             translatePage(langSwitcher.value);
         }).observe(container, { childList: true });
     });
+    // Also observe the year <select> directly — options are added to the select
+    // itself, not its parent div, so the div-level observer never fires for them.
+    var xjYearSelect = document.getElementById('xj-select-year_s');
+    if (xjYearSelect) {
+        new MutationObserver(function() {
+            translatePage(langSwitcher.value);
+        }).observe(xjYearSelect, { childList: true });
+    }
 }
 
 document.addEventListener('nav:loaded', initLangSwitcher);

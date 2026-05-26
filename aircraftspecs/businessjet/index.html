@@ -91,31 +91,31 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const specs = {
-            "HondaJet HA-420": {'\u822a\u7d9a\u8ddd\u96e2': "1,437 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
-            "HondaJet Elite": {'\u822a\u7d9a\u8ddd\u96e2': "1,455 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
-            "HondaJet Elite S": {'\u822a\u7d9a\u8ddd\u96e2': "1,520 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
-            "HondaJet Elite II": {'\u822a\u7d9a\u8ddd\u96e2': "1,600 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59275\u540d"},
-            "Cessna Citation Mustang": {'\u822a\u7d9a\u8ddd\u96e2': "1,200 NM", '\u6700\u5927\u901f\u5ea6': "340 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59274\u540d"},
-            "Cessna Citation CJ1 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,300 NM", '\u6700\u5927\u901f\u5ea6': "360 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
-            "Cessna Citation CJ2 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,500 NM", '\u6700\u5927\u901f\u5ea6': "390 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
-            "Cessna Citation CJ3 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,040 NM", '\u6700\u5927\u901f\u5ea6': "416 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59276\u540d"},
-            "Cessna Citation CJ4 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,200 NM", '\u6700\u5927\u901f\u5ea6': "451 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59278\u540d"},
-            "Cessna Citation Sovereign": {'\u822a\u7d9a\u8ddd\u96e2': "3,000 NM", '\u6700\u5927\u901f\u5ea6': "460 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
-            "Cessna Citation Latitude": {'\u822a\u7d9a\u8ddd\u96e2': "2,700 NM", '\u6700\u5927\u901f\u5ea6': "446 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
-            "Cessna Citation X": {'\u822a\u7d9a\u8ddd\u96e2': "3,460 NM", '\u6700\u5927\u901f\u5ea6': "527 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
-            "Cessna Citation Longitude": {'\u822a\u7d9a\u8ddd\u96e2': "3,500 NM", '\u6700\u5927\u901f\u5ea6': "483 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
-            "Gulfstream G150": {'\u822a\u7d9a\u8ddd\u96e2': "2,950 NM", '\u6700\u5927\u901f\u5ea6': "515 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59278\u540d"},
-            "Gulfstream G200": {'\u822a\u7d9a\u8ddd\u96e2': "3,100 NM", '\u6700\u5927\u901f\u5ea6': "504 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
-            "Gulfstream G280": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "543 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592710\u540d"},
-            "Gulfstream G300": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
-            "Gulfstream G350": {'\u822a\u7d9a\u8ddd\u96e2': "4,000 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u59279\u540d"},
-            "Gulfstream G400": {'\u822a\u7d9a\u8ddd\u96e2': "4,200 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592712\u540d"},
-            "Gulfstream G450": {'\u822a\u7d9a\u8ddd\u96e2': "4,350 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592714\u540d"},
-            "Gulfstream G500": {'\u822a\u7d9a\u8ddd\u96e2': "5,200 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592716\u540d"},
-            "Gulfstream G550": {'\u822a\u7d9a\u8ddd\u96e2': "6,750 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
-            "Gulfstream G600": {'\u822a\u7d9a\u8ddd\u96e2': "6,500 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
-            "Gulfstream G650": {'\u822a\u7d9a\u8ddd\u96e2': "7,000 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"},
-            "Gulfstream G650ER": {'\u822a\u7d9a\u8ddd\u96e2': "7,500 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "\u6700\u592719\u540d"}
+            "HondaJet HA-420": {'\u822a\u7d9a\u8ddd\u96e2': "1,437 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "5"},
+            "HondaJet Elite": {'\u822a\u7d9a\u8ddd\u96e2': "1,455 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "5"},
+            "HondaJet Elite S": {'\u822a\u7d9a\u8ddd\u96e2': "1,520 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "5"},
+            "HondaJet Elite II": {'\u822a\u7d9a\u8ddd\u96e2': "1,600 NM", '\u6700\u5927\u901f\u5ea6': "420 KTS", '\u4e57\u5ba2\u6570': "5"},
+            "Cessna Citation Mustang": {'\u822a\u7d9a\u8ddd\u96e2': "1,200 NM", '\u6700\u5927\u901f\u5ea6': "340 KTS", '\u4e57\u5ba2\u6570': "4"},
+            "Cessna Citation CJ1 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,300 NM", '\u6700\u5927\u901f\u5ea6': "360 KTS", '\u4e57\u5ba2\u6570': "6"},
+            "Cessna Citation CJ2 Series": {'\u822a\u7d9a\u8ddd\u96e2': "1,500 NM", '\u6700\u5927\u901f\u5ea6': "390 KTS", '\u4e57\u5ba2\u6570': "6"},
+            "Cessna Citation CJ3 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,040 NM", '\u6700\u5927\u901f\u5ea6': "416 KTS", '\u4e57\u5ba2\u6570': "6"},
+            "Cessna Citation CJ4 Series": {'\u822a\u7d9a\u8ddd\u96e2': "2,200 NM", '\u6700\u5927\u901f\u5ea6': "451 KTS", '\u4e57\u5ba2\u6570': "8"},
+            "Cessna Citation Sovereign": {'\u822a\u7d9a\u8ddd\u96e2': "3,000 NM", '\u6700\u5927\u901f\u5ea6': "460 KTS", '\u4e57\u5ba2\u6570': "9"},
+            "Cessna Citation Latitude": {'\u822a\u7d9a\u8ddd\u96e2': "2,700 NM", '\u6700\u5927\u901f\u5ea6': "446 KTS", '\u4e57\u5ba2\u6570': "9"},
+            "Cessna Citation X": {'\u822a\u7d9a\u8ddd\u96e2': "3,460 NM", '\u6700\u5927\u901f\u5ea6': "527 KTS", '\u4e57\u5ba2\u6570': "12"},
+            "Cessna Citation Longitude": {'\u822a\u7d9a\u8ddd\u96e2': "3,500 NM", '\u6700\u5927\u901f\u5ea6': "483 KTS", '\u4e57\u5ba2\u6570': "12"},
+            "Gulfstream G150": {'\u822a\u7d9a\u8ddd\u96e2': "2,950 NM", '\u6700\u5927\u901f\u5ea6': "515 KTS", '\u4e57\u5ba2\u6570': "8"},
+            "Gulfstream G200": {'\u822a\u7d9a\u8ddd\u96e2': "3,100 NM", '\u6700\u5927\u901f\u5ea6': "504 KTS", '\u4e57\u5ba2\u6570': "9"},
+            "Gulfstream G280": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "543 KTS", '\u4e57\u5ba2\u6570': "10"},
+            "Gulfstream G300": {'\u822a\u7d9a\u8ddd\u96e2': "3,600 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "9"},
+            "Gulfstream G350": {'\u822a\u7d9a\u8ddd\u96e2': "4,000 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "9"},
+            "Gulfstream G400": {'\u822a\u7d9a\u8ddd\u96e2': "4,200 NM", '\u6700\u5927\u901f\u5ea6': "541 KTS", '\u4e57\u5ba2\u6570': "12"},
+            "Gulfstream G450": {'\u822a\u7d9a\u8ddd\u96e2': "4,350 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "14"},
+            "Gulfstream G500": {'\u822a\u7d9a\u8ddd\u96e2': "5,200 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "16"},
+            "Gulfstream G550": {'\u822a\u7d9a\u8ddd\u96e2': "6,750 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "19"},
+            "Gulfstream G600": {'\u822a\u7d9a\u8ddd\u96e2': "6,500 NM", '\u6700\u5927\u901f\u5ea6': "516 KTS", '\u4e57\u5ba2\u6570': "19"},
+            "Gulfstream G650": {'\u822a\u7d9a\u8ddd\u96e2': "7,000 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "19"},
+            "Gulfstream G650ER": {'\u822a\u7d9a\u8ddd\u96e2': "7,500 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "19"}
         };
         const container = document.querySelector('.specs-search-section .global-inner:last-of-type');
         container.innerHTML = '';
@@ -126,12 +126,6 @@
         };
 
         const brands = {
-            "HondaJet": [
-                "HondaJet HA-420",
-                "HondaJet Elite",
-                "HondaJet Elite S",
-                "HondaJet Elite II"
-            ],
             "Cessna": [
                 "Cessna Citation Mustang",
                 "Cessna Citation CJ1 Series",
@@ -156,6 +150,12 @@
                 "Gulfstream G600",
                 "Gulfstream G650",
                 "Gulfstream G650ER"
+            ],
+            "HondaJet": [
+                "HondaJet HA-420",
+                "HondaJet Elite",
+                "HondaJet Elite S",
+                "HondaJet Elite II"
             ]
         };
 
@@ -202,11 +202,18 @@
                 const specsDiv = document.createElement('div');
                 specsDiv.className = 'aircraft-card-specs';
 
-                [['航続距離', 'Range'], ['最大速度', 'Speed'], ['乗客数', 'Pax']].forEach(([jpLabel]) => {
-                    if (!specs[name] || !specs[name][jpLabel]) return;
+                const isEn = localStorage.getItem('preferredLang') === 'en';
+                const labelMap = {
+                    '航続距離': { ja: '最大航続距離', en: 'Max Range' },
+                    '最大速度':  { ja: '最大速度',     en: 'Max Speed' },
+                    '乗客数':   { ja: '最大乗客数',   en: 'Max Passengers' }
+                };
+                [['航続距離'], ['最大速度'], ['乗客数']].forEach(([key]) => {
+                    if (!specs[name] || !specs[name][key]) return;
                     const spec = document.createElement('div');
                     spec.className = 'aircraft-card-spec';
-                    spec.innerHTML = `<span class="aircraft-card-spec-label">${jpLabel}</span><span class="aircraft-card-spec-value">${specs[name][jpLabel]}</span>`;
+                    const displayLabel = isEn ? labelMap[key].en : labelMap[key].ja;
+                    spec.innerHTML = `<span class="aircraft-card-spec-label">${displayLabel}</span><span class="aircraft-card-spec-value">${specs[name][key]}</span>`;
                     specsDiv.append(spec);
                 });
 
