@@ -314,6 +314,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    min-width: 0;
 }
 
 .range-legend-color {
@@ -335,6 +336,7 @@
 
 .range-legend-label {
     font-size: 0.9rem;
+    min-width: 0;
 }
 
 /* ── Range map container ── */

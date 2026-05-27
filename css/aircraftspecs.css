@@ -230,6 +230,7 @@ a.aircraft-type-card {
 .aircraft-type-card p {
     color: var(--text-dark);
     font-size: 0.9rem;
+    text-align: left;
 }
 
 /* ── Features Section ── */
@@ -357,7 +358,8 @@ a.aircraft-type-card {
 .info-item-label {
     color: var(--text-dark);
     font-size: 0.875rem;
-    flex-shrink: 0;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .info-item-value {
@@ -365,6 +367,8 @@ a.aircraft-type-card {
     font-weight: 600;
     font-size: 0.875rem;
     text-align: right;
+    flex: 0 1 auto;
+    min-width: 0;
 }
 
 /* ── Cost tables ── */
@@ -441,6 +445,8 @@ a.aircraft-type-card {
 .cost-label {
     color: var(--text-dark);
     font-size: 0.875rem;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .cost-row.total .cost-label {
@@ -451,6 +457,8 @@ a.aircraft-type-card {
     color: var(--text-dark);
     font-weight: 600;
     font-size: 0.875rem;
+    flex: 0 0 auto;
+    text-align: right;
 }
 
 .cost-row.total .cost-value {
@@ -502,4 +510,3 @@ a.aircraft-type-card {
     .search-container { max-width: 100%; }
     .specs-search-card { padding: 1.25rem; }
 }
-
