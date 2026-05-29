@@ -236,8 +236,6 @@ body {
     color: var(--text-dark);
     overflow-x: hidden;
     cursor: url('/assets/general/Cursor-Airplane.png') 9 9, auto;
-    word-break: auto-phrase;
-    overflow-wrap: break-word;
 }
 
 /* Lock scroll position when nav menu is open */

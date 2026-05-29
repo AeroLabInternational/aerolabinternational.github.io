@@ -30,10 +30,10 @@
         loadPartial('site-footer', '/partials/footer.html');
         loadPartial('site-linkbox', '/partials/linkbox.html');
 
-        // Japanese word-boundary line-breaking (cross-browser, no external deps)
-        var s = document.createElement('script');
-        s.src = '/js/ja-wrap.js?v=14';
-        document.head.appendChild(s);
+        // Japanese line-breaking is handled by CSS now; the JS auto-wrap loader is disabled.
+        // var s = document.createElement('script');
+        // s.src = '/js/ja-wrap.js';
+        // document.head.appendChild(s);
     });
 
     // Nav toggle — vanilla JS for pages that don't load jQuery/main.js.

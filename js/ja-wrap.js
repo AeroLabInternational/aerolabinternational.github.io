@@ -16,7 +16,8 @@
 
     // Characters that must never appear at the START of a line (行頭禁則).
     // We avoid inserting <wbr> before any segment that begins with one of these.
-    var LINE_START_FORBIDDEN = /^[。、．，！？）)\]\}〕］｝〉》」』】〙〗〟'"｠ヽヾゝゞ〃仝々〻ーァィゥェォッャュョヮぁぃぅぇぉっゃゅょゎ‥…・゛゜]/;
+    // Hyphen (-) is included so model numbers like YS-11 are never split at the dash.
+    var LINE_START_FORBIDDEN = /^[。、．，！？）)\]\}〕］｝〉》」』】〙〗〟'"｠ヽヾゝゞ〃仝々〻ーァィゥェォッャュョヮぁぃぅぇぉっゃゅょゎ‥…・゛゜\-]/;
 
     // Short pure-hiragana segments (≤ 2 chars) are verb/adjective morphemes and
     // grammatical glue (し, ま, しま, ます, した …). Never break after these.
@@ -45,24 +46,19 @@
     // katakana chunks as one vocabulary item.
     var KATAKANA_ONLY = /^[\u30A1-\u30FA\u30FC\u30FD\u30FE\uFF66-\uFF9D]+$/;
 
+    // Prevents ガルフストリーム|G550, エアバス|H125 — keep a katakana aircraft
+    // name attached to its immediately-following alphanumeric model number.
+    var ALPHANUM_START = /^[A-Za-z0-9]/;
+
     var HAS_JAPANESE = /[\u3041-\u30FF\u3400-\u9FFF]/;
 
-    var FALLBACK_TOKEN_RE = /[A-Za-z0-9]+(?:[.,:/-][A-Za-z0-9]+)*|[\u30A1-\u30FA\u30FC\u30FD\u30FE\uFF66-\uFF9D]+|[\u4E00-\u9FFF\u3400-\u4DBF々〆ヵヶ]+|[\u3041-\u3096\u309D\u309E]+|\s+|./g;
+    // Intl.Segmenter gives superior word-boundary accuracy for Japanese
+    // (correct handling of 買い付ける, 問い合わせ, compound verbs, etc.).
+    // Fall back to the regex tokenizer only on very old browsers.
+    var intlSegmenter = (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function')
+        ? new Intl.Segmenter('ja', { granularity: 'word' }) : null;
 
-    var WRAP_SELECTOR = [
-        'p',
-        '.info-item-label',
-        '.cost-label',
-        '.summary-description',
-        '.range-legend-label',
-        '.section-subtitle',
-        '.specs-search-desc',
-        '.spec-label',
-        '.spec-note',
-        '.summary-card-note',
-        '.aircraft-type-overview p',
-        '.category-description'
-    ].join(',');
+    var FALLBACK_TOKEN_RE = /[A-Za-z0-9]+(?:[.,:/-][A-Za-z0-9]+)*|[\u30A1-\u30FA\u30FC\u30FD\u30FE\uFF66-\uFF9D]+|[\u4E00-\u9FFF\u3400-\u4DBF々〆ヵヶ]+|[\u3041-\u3096\u309D\u309E]+|\s+|./g;
 
     var SKIP_ANCESTOR_SELECTOR = [
         '.language-switcher',
@@ -89,6 +85,11 @@
     }
 
     function segmentText(text) {
+        if (intlSegmenter) {
+            return Array.from(intlSegmenter.segment(text)).map(function (s) {
+                return { segment: s.segment, isWordLike: s.isWordLike };
+            });
+        }
         return fallbackSegmentText(text);
     }
 
@@ -133,6 +134,10 @@
             result += segs[i].segment;
             if (i < segs.length - 1 && segs[i].isWordLike) {
                 var nextSeg = segs[i + 1].segment;
+                // Don't insert <wbr> within pure-Latin/ASCII runs embedded in Japanese text
+                // (e.g. "Aerospace & Defense Review"). The browser handles English word
+                // wrapping at spaces natively; we only add break points at Japanese boundaries.
+                if (!HAS_JAPANESE.test(segs[i].segment) && !HAS_JAPANESE.test(nextSeg)) { i++; continue; }
                 // Rule 1 — line-start forbidden next char
                 if (LINE_START_FORBIDDEN.test(nextSeg)) { i++; continue; }
                 // Rule 2 — short hiragana morpheme (current segment)
@@ -155,6 +160,21 @@
                 // aircraft copy. Prevents ビジネス|ジェット, ペイ|ロード,
                 // レンジ|リング while still allowing breaks around particles.
                 if (KATAKANA_ONLY.test(segs[i].segment) && KATAKANA_ONLY.test(nextSeg)) { i++; continue; }
+                // Rule 7 — katakana word immediately followed by an alphanumeric
+                // model number: ガルフストリーム|G550, エアバス|H125.
+                if (KATAKANA_ONLY.test(segs[i].segment) && ALPHANUM_START.test(nextSeg)) { i++; continue; }
+                // Rule 8a — kanji compound (≥ 2 chars) followed by katakana:
+                // prevents 整備|スタッフ, 超長距離|ビジネスジェット, 設備|メンテナンス.
+                if (KANJI_ONLY.test(segs[i].segment) && segs[i].segment.length >= 2 &&
+                        KATAKANA_ONLY.test(nextSeg)) { i++; continue; }
+                // Rule 8b — katakana word followed by kanji compound (≥ 2 chars):
+                // prevents キャビン|空間, アビオニクス|機器, サービス|品質.
+                if (KATAKANA_ONLY.test(segs[i].segment) &&
+                        KANJI_ONLY.test(nextSeg) && nextSeg.length >= 2) { i++; continue; }
+                // Rule 9 — ASCII alphanumeric segment immediately followed by katakana:
+                // prevents Garmin|アビオニクス, MRO|プロバイダー, B777|エンジン.
+                if (!HAS_JAPANESE.test(segs[i].segment) && /^[A-Za-z0-9]/.test(segs[i].segment) &&
+                        KATAKANA_ONLY.test(nextSeg)) { i++; continue; }
 
                 // Break opportunity found. Advance past any immediately-following
                 // short-hiragana segments (し, ます, た, て, な, に, と …) so they
@@ -165,12 +185,24 @@
                 i++;
                 while (i < segs.length &&
                        ATTACH_HIRAGANA.test(segs[i].segment)) {
+                    // お and ご are honorific prefixes that attach to the FOLLOWING kanji
+                    // word (お届けする, お客様, ご提供 …), not suffixes of the preceding
+                    // word.  Stop absorption here so the break lands BEFORE the honorific
+                    // rather than after the isolated お/ご.
+                    if (/^[おご]$/.test(segs[i].segment) &&
+                            i + 1 < segs.length && HAS_KANJI.test(segs[i + 1].segment)) {
+                        break;
+                    }
                     result += segs[i].segment;
                     i++;
                 }
-                // Place <wbr> unless we reached the end or the very next char
-                // is line-start forbidden (e.g. 。、 after an absorbed cluster).
-                if (i < segs.length && !LINE_START_FORBIDDEN.test(segs[i].segment)) {
+                // Place <wbr> unless: end of string, line-start forbidden char,
+                // or the next token is a space (the space itself is already a
+                // CSS break point — adding <wbr> before it would isolate the
+                // preceding word alone on a line, e.g. G550|<space>の).
+                if (i < segs.length &&
+                        !LINE_START_FORBIDDEN.test(segs[i].segment) &&
+                        !/^\s/.test(segs[i].segment)) {
                     result += '<wbr>';
                 }
                 continue; // i already advanced; skip the i++ below
@@ -186,6 +218,17 @@
                 result += '<wbr>';
             }            i++;
         }
+        // Replace spaces within pure-ASCII runs with NBSP so the browser cannot
+        // break English phrases at CSS spaces.  E.g. "Aerospace & Defense Review"
+        // stays on one line instead of splitting as "Aerospace & Defense | Review".
+        // Only spaces flanked by ASCII printable chars (both sides non-Japanese)
+        // are converted; CJK↔Latin boundaries are left as regular spaces.
+        result = result.replace(/ /g, function (m, offset, s) {
+            var b = s[offset - 1];
+            var a = s[offset + 1];
+            return (b && /[A-Za-z0-9!-~]/.test(b) &&
+                    a && /[A-Za-z0-9!-~]/.test(a)) ? '\u00A0' : m;
+        });
         return leading + result + trailing;
     }
 
@@ -232,6 +275,7 @@
 
     function applyToPage() {
         if ((document.documentElement.getAttribute('lang') || 'ja') !== 'ja') return;
+        if (!document.body) return;
 
         if (bodyObserver) {
             bodyObserver.disconnect();
@@ -239,17 +283,12 @@
         }
 
         try {
-            document.querySelectorAll(WRAP_SELECTOR).forEach(function (el) {
-                if (el.closest(SKIP_ANCESTOR_SELECTOR)) return;
-
-                removeExistingBreaks(el);
-                wrapTextNodes(el);
-
-                // Prefer our inserted word-boundary opportunities. break-word is
-                // only an emergency fallback for strings longer than the line.
-                el.style.wordBreak = 'keep-all';
-                el.style.overflowWrap = 'break-word';
-            });
+            // Process all Japanese text nodes in the entire document so every
+            // element — regardless of CSS class — gets consistent <wbr> placement.
+            // word-break: keep-all is now set on body via CSS, so no per-element
+            // inline styles are needed here.
+            removeExistingBreaks(document.body);
+            wrapTextNodes(document.body);
         } finally {
             observeBody();
         }
