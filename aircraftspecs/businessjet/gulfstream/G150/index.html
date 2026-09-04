@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <title>Gulfstream G450</title>
+    <title>Gulfstream G150</title>
     <link rel="icon" href="/assets/general/Bookmark-Icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/nav.css">
@@ -20,56 +20,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .design-interior-photo .design-cycler-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 1.25rem 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .design-interior-photo .design-cycler-img {
+                padding: 1rem 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="site-nav"></div>
 
-    <div class="general-title" style="background-image: url(/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G450-Background.jpg);">
+    <div class="general-title" style="background-image: url(/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G150-Background.jpg);">
         <div class="general-title-inner">
             <div class="general-title-box">
-                <p class="general-title-english">Gulfstream G450</p>
+                <p class="general-title-english">Gulfstream G150</p>
                 <div class="general-title-icon">
                     <img src="/assets/aircraftspecs/Jet-Icon-White.png" alt="">
                 </div>
-                <h1 class="general-title-title">ガルフストリームG450</h1>
+                <h1 class="general-title-title">ガルフストリームG150</h1>
             </div>
         </div>
     </div>
 
     <div class="general-heading">
         <div class="general-heading-inner">
-            <p>長距離ビジネスジェット「ガルフストリームG450」の機体仕様や性能、運航コストの内訳に加え、航続距離マップをご覧いただけます。</p>
+            <p>ワイドキャビン中型ビジネスジェット「ガルフストリームG150」の機体仕様や性能、運航コストの内訳に加え、航続距離マップをご覧いただけます。</p>
         </div>
     </div>
 
-    <!-- Summary Section -->
+        <!-- Summary Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">概要</h2>
-
             <div class="summary-grid">
                 <div class="summary-card global-card">
                     <h3>最大航続距離</h3>
-                    <div class="value">4,350海里</div>
-                    <p class="summary-card-note"><span class="unit-metric">8,056 km</span><span class="unit-imperial">5,006 mi</span></p>
+                    <div class="value">2,950海里</div>
+                    <p class="summary-card-note"><span class="unit-metric">5,467 km</span><span class="unit-imperial">3,398 mi</span></p>
                 </div>
                 <div class="summary-card global-card">
                     <h3>高速巡航時の速度</h3>
-                    <div class="value">マッハ0.88</div>
-                    <p class="summary-card-note">500 kts / <span class="unit-metric">926 kmh</span><span class="unit-imperial">575 mph</span></p>
+                    <div class="value">マッハ0.80</div>
+                    <p class="summary-card-note">459 kts / <span class="unit-metric">850 kmh</span><span class="unit-imperial">528 mph</span></p>
                 </div>
                 <div class="summary-card global-card">
                     <h3>最大搭乗人数</h3>
-                    <div class="value">16名</div>
-                    <p class="summary-card-note">標準構成 12-14名</p>
+                    <div class="value">8名</div>
+                    <p class="summary-card-note">標準構成 6-8名</p>
                 </div>
             </div>
-
-            <div class="summary-description global-card"><span>ガルフストリーム&nbsp;G450は2004年から2017年にかけて製造された長距離ビジネスジェットで、2名乗務体制により運航され、最大16名の乗客搭乗が可能です。最大運用高度は</span><span class="unit-metric">13,716 m</span><span class="unit-imperial">45,000 ft</span><span data-original="、高速巡航速度はマッハ0.88 (500 kts / ">、高速巡航速度はマッハ0.88 (500 kts / </span><span class="unit-metric">926 kmh</span><span class="unit-imperial">575 mph</span><span>)、最大航続距離は約</span><span class="unit-metric">8,056 km</span><span class="unit-imperial">5,006 mi</span><span>（4,350海里）です。</span></div>
+            <div class="summary-description global-card">ガルフストリームG150は2006年に就航し、G100より広く長いキャビンとRockwell Collins Pro Line 21を備えたモデルです。 最大運用高度は<span class="unit-metric">13,716 m</span>、高速巡航速度はマッハ0.80（459 kts / <span class="unit-metric">850 kmh</span><span class="unit-imperial">528 mph</span>）、最大航続距離は約<span class="unit-metric">5,467 km</span><span class="unit-imperial">3,398 mi</span>（2,950海里）です。</div>
         </div>
     </section>
 
-    <!-- Cost Section -->
+<!-- Cost Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">コスト分析</h2>
@@ -118,15 +130,15 @@
                     <h3>運航コストの内訳</h3>
                     <div class="cost-row">
                         <span class="cost-label">年間変動費合計</span>
-                        <span class="cost-value" id="annualVariableCost" data-usd="2802400"></span>
+                        <span class="cost-value" id="annualVariableCost" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">年間固定費合計</span>
-                        <span id="annualFixedCostDisplay" class="cost-value" data-usd="1041596"></span>
+                        <span id="annualFixedCostDisplay" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">年間総コスト(固定費＋変動費)</span>
-                        <span class="cost-value" id="totalAnnualBudget" data-usd="3843996"></span>
+                        <span class="cost-value" id="totalAnnualBudget" data-usd="0"></span>
                     </div>
                     <div class="cost-row sub-total">
                         <span class="cost-label">月間総コスト(固定費＋変動費)</span>
@@ -142,23 +154,23 @@
                     <h3>時間変動費</h3>
                     <div class="cost-row">
                         <span class="cost-label">燃料費</span>
-                        <span id="fuelCostValue" class="cost-value" data-usd="3770"></span>
+                        <span id="fuelCostValue" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">整備関連費用</span>
-                        <span id="costAirframe" class="cost-value" data-usd="1489"></span>
+                        <span id="costAirframe" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">エンジン・APU整備プログラム費</span>
-                        <span id="costEngine" class="cost-value" data-usd="1247"></span>
+                        <span id="costEngine" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">その他変動費</span>
-                        <span id="costMisc" class="cost-value" data-usd="500"></span>
+                        <span id="costMisc" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">時間変動費合計</span>
-                        <span id="hourlyVariableTotal" class="cost-value" data-usd="7006"></span>
+                        <span id="hourlyVariableTotal" class="cost-value" data-usd="0"></span>
                     </div>
                 </div>
 
@@ -166,31 +178,31 @@
                     <h3>年間固定費明細</h3>
                     <div class="cost-row">
                         <span class="cost-label">乗員人件費 (給与・福利厚生)</span>
-                        <span id="costCrew" class="cost-value" data-usd="670670"></span>
+                        <span id="costCrew" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">乗員訓練費</span>
-                        <span id="costTraining" class="cost-value" data-usd="107200"></span>
+                        <span id="costTraining" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">格納庫費</span>
-                        <span id="costHangar" class="cost-value" data-usd="114400"></span>
+                        <span id="costHangar" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">管理費</span>
-                        <span id="costMgmt" class="cost-value" data-usd="50000"></span>
+                        <span id="costMgmt" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">航空機保険料</span>
-                        <span id="costInsurance" class="cost-value" data-usd="65993"></span>
+                        <span id="costInsurance" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row">
                         <span class="cost-label">その他固定費</span>
-                        <span id="costFixedMisc" class="cost-value" data-usd="33333"></span>
+                        <span id="costFixedMisc" class="cost-value" data-usd="0"></span>
                     </div>
                     <div class="cost-row total">
                         <span class="cost-label">年間固定費合計</span>
-                        <span id="annualFixedTotal" class="cost-value" data-usd="1041596"></span>
+                        <span id="annualFixedTotal" class="cost-value" data-usd="0"></span>
                     </div>
                 </div>
             </div>
@@ -215,38 +227,35 @@
         </div>
     </section>
 
-    <!-- Performance Section -->
+        <!-- Performance Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">性能</h2>
-
-            <!-- row 1: speed + range -->
             <div class="info-grid">
                 <div class="info-card global-card">
                     <h3>飛行速度</h3>
                     <div class="info-item">
                         <span class="info-item-label">最大速度</span>
-                        <span class="info-item-value">マッハ0.88 / 500 kts / <span class="unit-imperial">575 mph</span><span class="unit-metric">926 kmh</span></span>
+                        <span class="info-item-value">マッハ0.80 / 459 kts / <span class="unit-imperial">528 mph</span><span class="unit-metric">850 kmh</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">高速巡航時の速度</span>
-                        <span class="info-item-value">マッハ0.85 / 476 kts / <span class="unit-imperial">548 mph</span><span class="unit-metric">882 kmh</span></span>
+                        <span class="info-item-value">マッハ0.80 / 459 kts / <span class="unit-imperial">528 mph</span><span class="unit-metric">850 kmh</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">長距離巡航時の速度</span>
-                        <span class="info-item-value">マッハ0.80 / 445 kts / <span class="unit-imperial">512 mph</span><span class="unit-metric">824 kmh</span></span>
+                        <span class="info-item-value">マッハ0.75 / 430 kts / <span class="unit-imperial">495 mph</span><span class="unit-metric">796 kmh</span></span>
                     </div>
                 </div>
-
                 <div class="info-card global-card">
                     <h3>航続距離と飛行高度</h3>
                     <div class="info-item">
-                        <span class="info-item-label">航続距離 (乗員2名・乗客4名の場合)</span>
-                        <span class="info-item-value">4,350海里  / <span class="unit-metric">8,056 km</span><span class="unit-imperial">5,006 mi</span></span>
+                        <span class="info-item-label">航続距離 (メーカー公表値)</span>
+                        <span class="info-item-value">2,950海里 / <span class="unit-metric">5,467 km</span><span class="unit-imperial">3,398 mi</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">無給油最大航続距離 (乗客なし)</span>
-                        <span class="info-item-value">4,425海里 / <span class="unit-metric">8,195 km</span><span class="unit-imperial">5,092 mi</span></span>
+                        <span class="info-item-label">高速巡航時の航続距離</span>
+                        <span class="info-item-value">2,550海里 / <span class="unit-metric">4,723 km</span><span class="unit-imperial">2,934 mi</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">上昇限界</span>
@@ -258,112 +267,86 @@
                     </div>
                 </div>
             </div>
-
-            <!-- row 2: weight + fuel -->
             <div class="info-grid">
                 <div class="info-card global-card">
                     <h3>重量仕様</h3>
                     <div class="info-item">
                         <span class="info-item-label">最大離陸重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">74,600 lbs</span><span class="unit-metric">33,838 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">26,100 lbs</span><span class="unit-metric">11,839 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大着陸重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">66,000 lbs</span><span class="unit-metric">29,937 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">21,700 lbs</span><span class="unit-metric">9,843 kg</span></span>
                     </div>
                     <div class="info-item">
-                        <span class="info-item-label">基本運航重量 (乗員4人)</span>
-                        <span class="info-item-value"><span class="unit-imperial">43,000 lbs</span><span class="unit-metric">19,504 kg</span></span>
+                        <span class="info-item-label">基本運航重量 (乗員2人)</span>
+                        <span class="info-item-value"><span class="unit-imperial">15,100 lbs</span><span class="unit-metric">6,849 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大搭載量</span>
-                        <span class="info-item-value"><span class="unit-imperial">6,000 lb</span><span class="unit-metric">2,722 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">2,400 lb</span><span class="unit-metric">1,089 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大燃料搭載時の有効搭載量</span>
-                        <span class="info-item-value"><span class="unit-imperial">2,719 lb</span><span class="unit-metric">1,233 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">850 lb</span><span class="unit-metric">386 kg</span></span>
                     </div>
                 </div>
-
                 <div class="info-card global-card">
                     <h3>燃料消費</h3>
                     <div class="info-item">
                         <span class="info-item-label">燃料重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">29,500 lbs</span><span class="unit-metric">13,381 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">10,300 lbs</span><span class="unit-metric">4,672 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最大無燃料重量</span>
-                        <span class="info-item-value"><span class="unit-imperial">49,000 lbs</span><span class="unit-metric">22,226 kg</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">17,500 lbs</span><span class="unit-metric">7,938 kg</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">時間あたり燃料使用量</span>
-                        <span class="info-item-value"><span class="unit-imperial">498 gal</span><span class="unit-metric">1,885 L</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">360 gal</span><span class="unit-metric">1,363 L</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">総燃料容量</span>
-                        <span class="info-item-value"><span class="unit-imperial">4,370 gal</span><span class="unit-metric">16,542 L</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">1,430 gal</span><span class="unit-metric">5,413 L</span></span>
                     </div>
                 </div>
             </div>
-
-            <!-- Runway Length -->
             <img src="/assets/aircraftspecs/Runway.png" alt="Aircraft Runway" class="detail-runway-image">
-
             <div class="spec-chart-panel global-card runway-chart-panel">
                 <h3 class="spec-chart-heading">滑走距離要件</h3>
                 <div id="runwayUnitToggle">
-                    <button id="runwayUnitMeters" type="button" class="runway-unit-btn runway-unit-btn--active">
-                        メートル
-                    </button>
-                    <button id="runwayUnitFeet" type="button" class="runway-unit-btn">
-                        フィート
-                    </button>
+                    <button id="runwayUnitMeters" type="button" class="runway-unit-btn runway-unit-btn--active">メートル</button>
+                    <button id="runwayUnitFeet" type="button" class="runway-unit-btn">フィート</button>
                 </div>
-                <div class="spec-chart-canvas spec-chart-canvas--wide">
-                    <canvas id="runwayChart"></canvas>
-                </div>
+                <div class="spec-chart-canvas spec-chart-canvas--wide"><canvas id="runwayChart"></canvas></div>
                 <div class="disclaimer-card global-card" style="margin-top: 1.5rem;">
                     <p class="spec-note">滑走路の測定値は、晴天・乾燥した滑走路を基準とした最短値です。距離は乗客の体重、手荷物の重量、風、滑走路の状態、気温、空港の標高によって変わる場合があります。</p>
                 </div>
             </div>
-
-            <!-- Interactive Range map -->
             <div class="spec-chart-panel global-card" style="margin-top: 3rem;">
                 <h3 class="spec-chart-heading">インタラクティブ航続距離マップ</h3>
                 <div class="airport-search-wrap">
-                    <label for="airportSearch" class="spec-label">
-                        出発空港を検索：
-                    </label>
-                    <input 
-                        type="text" 
-                        id="airportSearch" 
-                        placeholder="空港名またはコードで検索（例：東京またはHND）..."
-                        autocomplete="off"
-                        spellcheck="false"
-                        autocorrect="off"
-                        autocapitalize="none"
-                    >
+                    <label for="airportSearch" class="spec-label">出発空港を検索：</label>
+                    <input type="text" id="airportSearch" placeholder="空港名またはコードで検索（例：東京またはHND）..." autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="none">
                     <div id="airportSuggestions"></div>
-                    <p class="spec-note">
-                        空港を検索・選択し、その地点からのG450の航続距離を確認できます。
-                    </p>
+                    <p class="spec-note">空港を検索・選択し、その地点からのG150の航続距離を確認できます。</p>
                 </div>
                 <div class="range-legend">
                     <div class="range-legend-row">
                         <div class="range-legend-item">
                             <div class="range-legend-color range-legend-color--blue"></div>
-                            <span class="range-legend-label"><span>航続距離 4,350海里</span> (<span class="unit-metric">8,056 km</span><span class="unit-imperial">5,006 mi</span>)</span>
+                            <span class="range-legend-label"><span>航続距離 2,950海里</span> (<span class="unit-metric">5,467 km</span><span class="unit-imperial">3,398 mi</span>)</span>
                         </div>
                         <div class="range-legend-item">
                             <div class="range-legend-color range-legend-color--red"></div>
-                            <span class="range-legend-label"><span>満席時航続距離(16名) 4,070海里</span> (<span class="unit-metric">7,538 km</span><span class="unit-imperial">4,683 mi</span>)</span>
+                            <span class="range-legend-label"><span>高速巡航時航続距離 2,550海里</span> (<span class="unit-metric">4,723 km</span><span class="unit-imperial">2,934 mi</span>)</span>
                         </div>
                     </div>
                 </div>
                 <div id="rangeMap"></div>
                 <div class="disclaimer-card global-card" style="margin-top: 1.5rem;">
-                    <p class="spec-note">青いレンジリングは、G450の公表航続距離を示す目安です。実際の航続距離は、搭載量、ATC経路、速度、気象、装備重量などによって変動します。</p>
-                    <p class="spec-note">赤いレンジリングは、独立した市場データに掲載された満席時航続距離の目安です。実際の運航では、乗客数と燃料搭載量の組み合わせによって結果が変わります。</p>
+                    <p class="spec-note">青いレンジリングは、メーカー公表のNBAA IFR理論航続距離を基準としています。実際の航続距離は、搭載量、巡航速度、風、気象、航空路、装備構成などによって変動します。</p>
+                    <p class="spec-note">赤いレンジリングはG150の高速巡航時、または高搭載量運航時の比較目安です。運航計画には実際の重量・気象・空港条件を使用してください。</p>
                 </div>
             </div>
         </div>
@@ -373,18 +356,16 @@
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">キャビン</h2>
-
-            <!-- row 1: seating + cabin -->
             <div class="info-grid">
                 <div class="info-card global-card">
                     <h3>席配置</h3>
                     <div class="info-item">
                         <span class="info-item-label">最大搭乗人数</span>
-                        <span class="info-item-value">16名</span>
+                        <span class="info-item-value">8名</span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">標準構成</span>
-                        <span class="info-item-value">12-14名</span>
+                        <span class="info-item-value">6-8名</span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">最小乗組員 (パイロット)</span>
@@ -392,44 +373,50 @@
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">客室乗務員 (任意)</span>
-                        <span class="info-item-value">1名</span>
+                        <span class="info-item-value">1名（任意）</span>
                     </div>
                 </div>
-
                 <div class="info-card global-card">
                     <h3>キャビン寸法</h3>
                     <div class="info-item">
                         <span class="info-item-label">客室の広さ (容積)</span>
-                        <span class="info-item-value"><span class="unit-imperial">1,525 ft³</span><span class="unit-metric">43.17 m³</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">465 ft³</span><span class="unit-metric">13.17 m³</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">キャビン高</span>
-                        <span class="info-item-value"><span class="unit-imperial">6 ft 2 in</span><span class="unit-metric">1.88 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">5 ft 9 in</span><span class="unit-metric">1.75 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">キャビン幅</span>
-                        <span class="info-item-value"><span class="unit-imperial">7 ft 4 in</span><span class="unit-metric">2.24 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">5 ft 9 in</span><span class="unit-metric">1.75 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">キャビン長 (荷物室含む)</span>
-                        <span class="info-item-value"><span class="unit-imperial">45 ft 1 in</span><span class="unit-metric">13.74 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">17 ft 8 in</span><span class="unit-metric">5.38 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">荷物室容積</span>
-                        <span class="info-item-value"><span class="unit-imperial">169 ft³</span><span class="unit-metric">4.79 m³</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">80 ft³</span><span class="unit-metric">2.27 m³</span></span>
                     </div>
                 </div>
             </div>
-
-            <!-- row 2: interior photo + layout cycler -->
             <div class="design-image-row">
-                <div class="design-interior-photo">
-                    <img src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior.png" alt="G450 Interior">
+                <div class="design-interior-photo" id="interiorCycler" style="position: relative;">
+                    <div class="design-cycler-images">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior-1.png" alt="G150 representative interior 1">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior-2.png" alt="G150 representative interior 2">
+                    </div>
+                    <button class="design-cycler-btn design-cycler-btn--prev" id="interiorPrev">&#8249;</button>
+                    <button class="design-cycler-btn design-cycler-btn--next" id="interiorNext">&#8250;</button>
+                    <div class="design-cycler-dots" id="interiorDots">
+                        <span class="design-cycler-dot design-cycler-dot--active"></span>
+                        <span class="design-cycler-dot"></span>
+                    </div>
                 </div>
                 <div class="design-layout-panel" id="layoutCycler">
                     <div class="design-cycler-images">
-                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-1.png" alt="G450 Layout 1">
-                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-2.png" alt="G450 Layout 2">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-1.png" alt="G150 representative layout 1">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-2.png" alt="G150 representative layout 2">
                     </div>
                     <button class="design-cycler-btn design-cycler-btn--prev" id="layoutPrev">&#8249;</button>
                     <button class="design-cycler-btn design-cycler-btn--next" id="layoutNext">&#8250;</button>
@@ -446,28 +433,27 @@
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">機体外観</h2>
-
             <div class="design-exterior-row">
                 <div class="info-card global-card design-exterior-specs">
                     <h3>外装寸法</h3>
                     <div class="info-item">
                         <span class="info-item-label">全長</span>
-                        <span class="info-item-value"><span class="unit-imperial">89 ft 4 in</span><span class="unit-metric">27.23 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">56 ft 9 in</span><span class="unit-metric">17.30 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">全幅</span>
-                        <span class="info-item-value"><span class="unit-imperial">77 ft 10 in</span><span class="unit-metric">23.72 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">55 ft 7 in</span><span class="unit-metric">16.94 m</span></span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">全高</span>
-                        <span class="info-item-value"><span class="unit-imperial">25 ft 2 in</span><span class="unit-metric">7.67 m</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">19 ft 1 in</span><span class="unit-metric">5.82 m</span></span>
                     </div>
                 </div>
                 <div class="design-image-cycler" id="exteriorCycler">
                     <div class="design-cycler-images">
-                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Side.png" alt="G450 Side View">
-                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Top.png" alt="G450 Top View">
-                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Front.png" alt="G450 Front View">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Side.png" alt="G150 representative side view">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Top.png" alt="G150 representative top view">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Front.png" alt="G150 representative front view">
                     </div>
                     <button class="design-cycler-btn design-cycler-btn--prev" id="exteriorPrev">&#8249;</button>
                     <button class="design-cycler-btn design-cycler-btn--next" id="exteriorNext">&#8250;</button>
@@ -485,25 +471,23 @@
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">エンジン・APU</h2>
-
-            <!-- powerplant + APU -->
             <div class="info-grid">
                 <div class="info-card global-card">
                     <h3>エンジン</h3>
                     <div class="info-item">
                         <span class="info-item-label">モデル</span>
-                        <span class="info-item-value">ロールスロイス製Tay 611-8C</span>
+                        <span class="info-item-value">Honeywell TFE731-40AR</span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">離陸推力 (2x)</span>
-                        <span class="info-item-value"><span class="unit-imperial">13,850 lbF</span><span class="unit-metric">61.6 kN</span></span>
+                        <span class="info-item-value"><span class="unit-imperial">4,420 lbF</span><span class="unit-metric">19.7 kN</span></span>
                     </div>
                 </div>
                 <div class="info-card global-card">
                     <h3>補助動力装置 (APU)</h3>
                     <div class="info-item">
                         <span class="info-item-label">モデル</span>
-                        <span class="info-item-value">Honeywell GTCP36-150</span>
+                        <span class="info-item-value">Honeywell GTCP36-100</span>
                     </div>
                     <div class="info-item">
                         <span class="info-item-label">燃料消費量</span>
@@ -514,7 +498,7 @@
         </div>
     </section>
 
-    <!-- Disclaimer Section -->
+<!-- Disclaimer Section -->
     <section class="detail-section">
         <div class="detail-section-inner global-inner">
             <h2 class="detail-section-title global-title">免責事項</h2>
@@ -569,19 +553,9 @@
     <script src="/js/fuelcost.js"></script>
     <script>
         // ===========================
-        // G450 cost data is page-local so the shared G550 cost source remains untouched.
+        // AIRCRAFT ID — identifies which cost block to load from aircraft-costs.js
         // ===========================
-        // Specs and costs are cross-checked against Gulfstream, Guardian Jet,
-        // Conklin & de Decker, Duncan Aviation and SherpaReport benchmarks.
-        window.AircraftCosts = window.AircraftCosts || {};
-        window.AircraftCosts.G450 = {
-            fuelLitersPerHour: 1885,
-            hourly: { airframe: 1489, engine: 1247, misc: 500 },
-            annual: { crew: 670670, training: 107200, hangar: 114400, management: 50000, insurance: 65993, misc: 33333 },
-            // The shared chart accepts feet and converts to metres for metric display.
-            runway: { takeoff: 5600, landingP91: 2650, landingP135: 3313 }
-        };
-        var AIRCRAFT_ID = 'G450';
+        var AIRCRAFT_ID = 'G150';
         var _aircraftData = applyAircraftCosts(AIRCRAFT_ID);
 
         let runwayChart;
@@ -781,7 +755,7 @@
         }
 
         // ===========================
-        // G450 AIRCRAFT DATA
+        // G150 AIRCRAFT DATA
         // ===========================
 
         var _initNonFuelHourly = computeNonFuelHourly();
@@ -797,9 +771,9 @@
         const updateRangeMap = initRangeMap(
             35.5494,
             139.7798,
-            4350,
-            4070,
-            'G450',
+            2,950,
+            2,550,
+            'G150',
             'Tokyo Haneda Airport (HND)'
         );
 
@@ -874,6 +848,7 @@
             });
         }
 
+        initDesignCycler({ containerId: 'interiorCycler', prevBtnId: 'interiorPrev', nextBtnId: 'interiorNext', dotsId: 'interiorDots' });
         initDesignCycler({ containerId: 'layoutCycler',   prevBtnId: 'layoutPrev',   nextBtnId: 'layoutNext',   dotsId: 'layoutDots'   });
         initDesignCycler({ containerId: 'exteriorCycler', prevBtnId: 'exteriorPrev', nextBtnId: 'exteriorNext', dotsId: 'exteriorDots' });
 

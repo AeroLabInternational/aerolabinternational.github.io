@@ -20,11 +20,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .design-interior-photo .design-cycler-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 1.25rem 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .design-interior-photo .design-cycler-img {
+                padding: 1rem 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="site-nav"></div>
 
-    <div class="general-title" style="background-image: url(/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.png);">
+    <div class="general-title" style="background-image: url(/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.jpg);">
         <div class="general-title-inner">
             <div class="general-title-box">
                 <p class="general-title-english">Gulfstream G550</p>
@@ -423,18 +437,37 @@
 
             <!-- row 2: interior photo + layout cycler -->
             <div class="design-image-row">
-                <div class="design-interior-photo">
-                    <img src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior.png" alt="G550 Interior">
+                <div class="design-interior-photo" id="interiorCycler" style="position: relative;">
+                    <div class="design-cycler-images">
+                        <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior-1.png" alt="G550 Interior 1">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Interior-2.png" alt="G550 Interior 2">
+                    </div>
+                    <button class="design-cycler-btn design-cycler-btn--prev" id="interiorPrev">&#8249;</button>
+                    <button class="design-cycler-btn design-cycler-btn--next" id="interiorNext">&#8250;</button>
+                    <div class="design-cycler-dots" id="interiorDots">
+                        <span class="design-cycler-dot design-cycler-dot--active"></span>
+                        <span class="design-cycler-dot"></span>
+                    </div>
                 </div>
                 <div class="design-layout-panel" id="layoutCycler">
                     <div class="design-cycler-images">
                         <img class="design-cycler-img design-cycler-img--active" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-1.png" alt="G550 Layout 1">
                         <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-2.png" alt="G550 Layout 2">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-3.png" alt="G550 Layout 3">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-4.png" alt="G550 Layout 4">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-5.png" alt="G550 Layout 5">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-6.png" alt="G550 Layout 6">
+                        <img class="design-cycler-img" src="/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Layout-7.png" alt="G550 Layout 7">
                     </div>
                     <button class="design-cycler-btn design-cycler-btn--prev" id="layoutPrev">&#8249;</button>
                     <button class="design-cycler-btn design-cycler-btn--next" id="layoutNext">&#8250;</button>
                     <div class="design-cycler-dots" id="layoutDots">
                         <span class="design-cycler-dot design-cycler-dot--active"></span>
+                        <span class="design-cycler-dot"></span>
+                        <span class="design-cycler-dot"></span>
+                        <span class="design-cycler-dot"></span>
+                        <span class="design-cycler-dot"></span>
+                        <span class="design-cycler-dot"></span>
                         <span class="design-cycler-dot"></span>
                     </div>
                 </div>
@@ -864,6 +897,7 @@
             });
         }
 
+        initDesignCycler({ containerId: 'interiorCycler', prevBtnId: 'interiorPrev', nextBtnId: 'interiorNext', dotsId: 'interiorDots' });
         initDesignCycler({ containerId: 'layoutCycler',   prevBtnId: 'layoutPrev',   nextBtnId: 'layoutNext',   dotsId: 'layoutDots'   });
         initDesignCycler({ containerId: 'exteriorCycler', prevBtnId: 'exteriorPrev', nextBtnId: 'exteriorNext', dotsId: 'exteriorDots' });
 

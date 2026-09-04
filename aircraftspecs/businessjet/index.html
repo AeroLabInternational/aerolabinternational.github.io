@@ -117,6 +117,23 @@
             "Gulfstream G650": {'\u822a\u7d9a\u8ddd\u96e2': "7,000 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "19"},
             "Gulfstream G650ER": {'\u822a\u7d9a\u8ddd\u96e2': "7,500 NM", '\u6700\u5927\u901f\u5ea6': "530 KTS", '\u4e57\u5ba2\u6570': "19"}
         };
+        Object.assign(specs, {
+            "Gulfstream G100": {'航続距離': "2,910 NM", '最大速度': "474 KTS", '乗客数': "7"},
+            "Gulfstream G150": {'航続距離': "2,950 NM", '最大速度': "459 KTS", '乗客数': "8"},
+            "Gulfstream G200": {'航続距離': "3,400 NM", '最大速度': "459 KTS", '乗客数': "10"},
+            "Gulfstream G280": {'航続距離': "3,600 NM", '最大速度': "482 KTS", '乗客数': "10"},
+            "Gulfstream G300": {'航続距離': "3,600 NM", '最大速度': "541 KTS", '乗客数': "10"},
+            "Gulfstream G350": {'航続距離': "3,800 NM", '最大速度': "505 KTS", '乗客数': "19"},
+            "Gulfstream G400": {'航続距離': "4,200 NM", '最大速度': "504 KTS", '乗客数': "12"},
+            "Gulfstream G450": {'航続距離': "4,350 NM", '最大速度': "500 KTS", '乗客数': "16"},
+            "Gulfstream G500": {'航続距離': "5,300 NM", '最大速度': "530 KTS", '乗客数': "19"},
+            "Gulfstream G550": {'航続距離': "6,750 NM", '最大速度': "488 KTS", '乗客数': "19"},
+            "Gulfstream G600": {'航続距離': "6,600 NM", '最大速度': "516 KTS", '乗客数': "19"},
+            "Gulfstream G650": {'航続距離': "7,000 NM", '最大速度': "516 KTS", '乗客数': "19"},
+            "Gulfstream G650ER": {'航続距離': "7,500 NM", '最大速度': "516 KTS", '乗客数': "19"},
+            "Gulfstream G700": {'航続距離': "7,750 NM", '最大速度': "516 KTS", '乗客数': "19"},
+            "Gulfstream G800": {'航続距離': "8,200 NM", '最大速度': "516 KTS", '乗客数': "19"}
+        });
         const container = document.querySelector('.specs-search-section .global-inner:last-of-type');
         container.innerHTML = '';
 
@@ -131,6 +148,35 @@
             "Gulfstream G650": "/aircraftspecs/businessjet/gulfstream/G650/",
             "Gulfstream G650ER": "/aircraftspecs/businessjet/gulfstream/G650ER/"
         };
+        Object.assign(pagePaths, {
+            "Gulfstream G100": "/aircraftspecs/businessjet/gulfstream/G100/",
+            "Gulfstream G150": "/aircraftspecs/businessjet/gulfstream/G150/",
+            "Gulfstream G300": "/aircraftspecs/businessjet/gulfstream/G300/",
+            "Gulfstream G350": "/aircraftspecs/businessjet/gulfstream/G350/",
+            "Gulfstream G700": "/aircraftspecs/businessjet/gulfstream/G700/",
+            "Gulfstream G800": "/aircraftspecs/businessjet/gulfstream/G800/"
+        });
+
+        const cardImagePaths = {
+            "Gulfstream G280": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G280-Background.jpg",
+            "Gulfstream G550": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.jpg",
+            "Gulfstream G650": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G650-Background.jpg"
+        };
+        Object.assign(cardImagePaths, {
+            "Gulfstream G100": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G100-Background.jpg",
+            "Gulfstream G150": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G150-Background.jpg",
+            "Gulfstream G200": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G200-Background.jpg",
+            "Gulfstream G300": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G300-Background.jpg",
+            "Gulfstream G350": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G350-Background.jpg",
+            "Gulfstream G400": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G400-Background.jpg",
+            "Gulfstream G450": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G450-Background.jpg",
+            "Gulfstream G500": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G500-Background.jpg",
+            "Gulfstream G600": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G600-Background.jpg",
+            "Gulfstream G650ER": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G650ER-Background.jpg",
+            "Gulfstream G700": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G700-Background.jpg",
+            "Gulfstream G800": "/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G800-Background.jpg"
+        });
+        const fallbackCardImagePath = "/assets/aircraftspecs/Jet-Background.png";
 
         const brands = {
             "Cessna": [
@@ -165,6 +211,23 @@
                 "HondaJet Elite II"
             ]
         };
+        brands.Gulfstream = [
+            "Gulfstream G100",
+            "Gulfstream G150",
+            "Gulfstream G200",
+            "Gulfstream G280",
+            "Gulfstream G300",
+            "Gulfstream G350",
+            "Gulfstream G400",
+            "Gulfstream G450",
+            "Gulfstream G500",
+            "Gulfstream G550",
+            "Gulfstream G600",
+            "Gulfstream G650",
+            "Gulfstream G650ER",
+            "Gulfstream G700",
+            "Gulfstream G800"
+        ];
 
         Object.entries(brands).forEach(([brand, models]) => {
             const section = document.createElement('div');
@@ -191,13 +254,10 @@
 
                 const img = document.createElement('div');
                 img.className = 'aircraft-card-image';
-                if (name === 'Gulfstream G550') {
-                    img.style.backgroundImage = "url('/assets/aircraftspecs/aircrafts/gulfstream/Gulfstream-G550-Background.png')";
-                    img.style.backgroundSize = 'cover';
-                    img.style.backgroundPosition = 'center';
-                } else {
-                    img.textContent = '✈️';
-                }
+                const imagePath = cardImagePaths[name] || fallbackCardImagePath;
+                img.style.backgroundImage = `url('${imagePath}')`;
+                img.style.backgroundSize = 'cover';
+                img.style.backgroundPosition = 'center';
 
                 const content = document.createElement('div');
                 content.className = 'aircraft-card-content';
