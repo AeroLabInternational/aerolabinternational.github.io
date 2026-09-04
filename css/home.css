@@ -407,3 +407,77 @@ html[lang="en"] .home-main .home-subtitle { font-size: 1.111rem; }
 @media (max-width: 767px) {
   .home-group-card--aircraftspecs .home-group-card-logo { height: 6.25rem !important; }
 }
+
+/* ================================================
+   home-movie-section
+   Home-only treatment for the promotional video.
+   This intentionally avoids the generic global-card styles used by
+   interior pages so the section follows the home page's visual system.
+   ================================================ */
+
+.home-movie-section {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.home-movie-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-movie-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-movie-title {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.home-movie-subtitle {
+  margin-top: 0.45rem;
+  color: var(--color-muted);
+  font-size: 0.833rem;
+  letter-spacing: 0.08em;
+}
+
+.home-movie-area {
+  position: relative;
+  width: min(100%, 1100px);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.667rem;
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.35);
+}
+
+.home-movie-area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.home-movie-area iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .home-movie-inner { padding: 2.75rem 1.25rem 3.5rem; }
+  .home-movie-heading { margin-bottom: 1.5rem; }
+  .home-movie-subtitle { font-size: 0.75rem; }
+  .home-movie-area { border-radius: 0.444rem; }
+}
